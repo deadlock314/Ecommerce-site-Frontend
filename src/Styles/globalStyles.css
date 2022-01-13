@@ -1,0 +1,15 @@
+*{
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style: none;
+}
+:root{
+    --color:#a52a1a;
+    --bgcolor: #fbfbfb;
+}
+body{
+    background-color: #efefef;
+    margin: 0px;
+}

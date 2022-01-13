@@ -1,0 +1,27 @@
+#productInfo-maintitle{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 20px 0px 10px;
+}
+#specification-subheading{
+ 
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 30px 0px 20px;
+}
+
+#specification-obj{
+    display: grid;
+    grid-template-columns: 30% 60% 22%;
+}
+
+.specification-val{
+    display: inline-block;
+    font-size: 1.1rem;
+   margin-top: 13px;
+   
+  
+}
+    
+
+

@@ -1,0 +1,35 @@
+
+
+nav{
+    background-color:var(--color);
+    width: 100%;
+    height: 76px;
+}
+.cart a:link{ 
+    background-color:var(--color);
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+    margin: 18px 23px;
+    font-size: 27px;
+    color: white;
+}
+
+.login a:link{
+ float: right;
+ margin: 25px 4px;
+ font-size: 20px;
+ color: white;
+
+}
+.company-name{
+    float: left;
+    margin: 16px 40px;
+    font-size: 33px;
+    color:yellow;
+}
+
+
+
+
+

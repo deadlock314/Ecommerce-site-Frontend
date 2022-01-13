@@ -3,8 +3,8 @@ import { BrowserRouter,Routes ,Route} from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import LogIn from './Components/authComponent/LogIn';
 import SignUp from './Components/authComponent/SignUp'
-import ProductInfo from './Components/ProductInfo';
-import Products from './Components/Products';
+import ProductInfo from './Components/ProductComponent/ProductInfo';
+import Products from './Components/ProductComponent/Products';
 import Cart from './Components/Cart';
 import './Styles/globalStyles.css'
 
