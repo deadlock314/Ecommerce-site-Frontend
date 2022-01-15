@@ -2,22 +2,18 @@ import React from 'react';
 import '../../Styles/productStyles.css';
 import { useNavigate } from 'react-router';
 
-
 function ProductStruct(productList) {
-const redirect=useNavigate()
-
-     const ProductInfoFetch=(e)=>{
-        
+    const redirect=useNavigate();
+    const ProductInfoFetch=(e)=>{
+               
         redirect(`/ProductInfo/${e.target.name}`)
-       }
+          
+          }
 
     return ( 
         <>{
 productList.props.map((product)=>{
 
- 
-  
- 
     return(
         
              <div className="product-struct" key={product.id} onClick={ProductInfoFetch} >

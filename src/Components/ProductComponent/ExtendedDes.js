@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../Styles/ExdesStyles.css'
+import '../../Styles/ExdesStyles.css';
+
 function ExtendedDes(props) {
    const ExDes=props.exdes;
 
@@ -11,15 +12,15 @@ function ExtendedDes(props) {
       {
            keys.map((key)=>{
             return(
-                <div>
-                 <p id='specification-subheading'> {key} </p>
+                <div key={Math.random()}>
+                 <p id='specification-subheading'  > {key} </p>
                 <hr/>
                 <div>
               {
                ExDes[key].map((param)=>{
                       const paramKey=[Object.keys(param)[0]];
                       return(
-                        <div id='specification-obj'>
+                        <div id='specification-obj' key={Math.random()} >
                          <p className='specification-val'>  { paramKey }  </p>
                           
                             

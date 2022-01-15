@@ -9,7 +9,7 @@ function ProductInfoPropsInfoStruct(props) {
         <div className="productInfoProps-struct" key={productInfoProps.id} >
            <div className='productInfo-left-container'>
            <img id='productInfo-image' src={productInfoProps.imgLink}   alt={productInfoProps.name}/>
-          <CartButtons/> 
+          <CartButtons prop={productInfoProps.id}/> 
           </div>
           <div className="productInfo-right-container">
            <p id='productInfo-des'> {productInfoProps.des}</p>
