@@ -7,10 +7,12 @@ import ProductInfo from './Components/ProductComponent/ProductInfo';
 import Products from './Components/ProductComponent/Products';
 import Cart from './Components/CartComponents/Cart';
 import BuyingPage from './BuyingPageComponent/BuyingPage';
-import './Styles/globalStyles.css';
 import Footer from './Components/Footer';
+import './Styles/globalStyles.css';
 
 function App() {
+
+
   return (
 
  <BrowserRouter>
@@ -23,7 +25,7 @@ function App() {
   <Route path='/cart' element={<Cart/>}/>
  <Route path='ProductInfo/:ProductId' element={<ProductInfo/>}/>
  <Route path='buyingpage/:ProductId' element={<BuyingPage/>}/>
- </Routes>
+  </Routes>
  <Footer/>
  </BrowserRouter>
 

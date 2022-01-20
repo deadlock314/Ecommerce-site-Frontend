@@ -12,7 +12,7 @@ const [ productInfo,setProductInfo]=useState(productInfoObj)
  const singleProduct=productInfo.filter((elem)=>elem.id==params.ProductId)
     return ( 
     <>
-   <ProductInfoStruct product={singleProduct}></ProductInfoStruct>
+   <ProductInfoStruct product={singleProduct[0]}></ProductInfoStruct>
     </> );
 }
 

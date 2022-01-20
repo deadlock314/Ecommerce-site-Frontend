@@ -4,12 +4,12 @@ import CartButtons from '../CartButtons';
 import Ratings from './Ratings';
 function ProductInfoPropsInfoStruct(props) {
    
-     const productInfoProps=props.product[0];
+     const productInfoProps=props.product;
     return ( 
         <div className="productInfoProps-struct" key={productInfoProps.id} >
            <div className='productInfo-left-container'>
            <img id='productInfo-image' src={productInfoProps.imgLink}   alt={productInfoProps.name}/>
-          <CartButtons prop={productInfoProps.id}/> 
+          <CartButtons prop={productInfoProps}/> 
           </div>
           <div className="productInfo-right-container">
            <p id='productInfo-des'> {productInfoProps.des}</p>

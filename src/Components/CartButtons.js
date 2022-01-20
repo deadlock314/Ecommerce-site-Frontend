@@ -2,11 +2,34 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 
 function CartButtons(props) {
-    console.log(props)
     const redirect=useNavigate()
     const AddToCartHandler=(e)=>{
-     
-        redirect(`/cart/${e.target.name}`)
+
+
+let pastData=sessionStorage.getItem('CartProductKey');
+let pastdata=[];
+let pastNormData=[];
+
+
+let z=false;
+if(pastData==null){
+
+  redirect(`/cart/${e.target.name}`);
+ 
+}
+
+else{
+pastNormData=JSON.parse(pastData);
+
+z=pastNormData.map((x)=>{
+    if(x.id==e.target.name)
+    return true;
+})
+if(z)
+redirect(`/cart`);
+else
+redirect(`/cart/${e.target.name}`);
+} 
 
     }
     const BuyNowHandler=(e)=>{

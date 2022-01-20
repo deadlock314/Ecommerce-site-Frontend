@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router';
 function ProductStruct(productList) {
     const redirect=useNavigate();
     const ProductInfoFetch=(e)=>{
-               
+         
+        if(typeof(e.target.name) == undefined ||e.target.name== undefined)
+        redirect('/')
+        else
         redirect(`/ProductInfo/${e.target.name}`)
           
           }
