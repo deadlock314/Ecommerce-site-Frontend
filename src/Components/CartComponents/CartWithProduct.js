@@ -3,6 +3,8 @@ import CartProductStruct from './CartProductStruct';
 import SudoComponent from './SudoComponent';
 import ProductCounter from './ProductCount';
 import PastDataFun from '../../HelperFun/PastDataFun';
+import '../../Styles/CartStyles/CartPS.css';
+
 
 function CartWithProduct(prop) {
 
@@ -43,8 +45,6 @@ const [count,setCount]=React.useState(1)
   const sendDataToCalculator=(cdata)=>{
 
     setCount(cdata.count)
-    priceObj.price=priceObj.price+cdata.price*cdata.mode;
-    priceObj.discount=priceObj.discount+cdata.discount*cdata.mode ;
     priceObj.totalAmount=priceObj.totalAmount+cdata.totalAmount*cdata.mode;
     setPriceObj(priceObj);
     
@@ -55,10 +55,6 @@ const [count,setCount]=React.useState(1)
 
     if(priceObj.price != 2*pastData.price || pastData.price !=0)
     {
-      
-    
-       priceObj.price=priceObj.price+pastData.price;
-    priceObj.discount=priceObj.discount+pastData.discount;
     priceObj.totalAmount=priceObj.totalAmount+pastData.totalAmount;
      setPriceObj(priceObj);
     
@@ -80,13 +76,13 @@ const [count,setCount]=React.useState(1)
         ); 
         })
        }
-        <>    
-    <p>AmountOfProduct ₹{priceObj.price}</p>
-    <p>Discount ₹{priceObj.discount}</p>
-    <p>TotalAmount ₹{priceObj.totalAmount }</p>
+       <hr/>
+        <div id='calc'>    
+     
+    <p className='calc-value'>Total Amount ₹{priceObj.totalAmount }</p>
     <SudoComponent props={priceObj} />
     
-      </>    
+      </div>    
         </>
         );
 }

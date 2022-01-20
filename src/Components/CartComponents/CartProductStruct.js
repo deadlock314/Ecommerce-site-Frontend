@@ -1,6 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
-
+import '../../Styles/CartStyles/CartPS.css'
 
 
 function CartProductStruct(prop) {
@@ -10,8 +9,11 @@ function CartProductStruct(prop) {
         <>
         <div className="cart-product-struct" key={prop.props.id} >
             <img id='cart-product-image' src={prop.props.imgLink} name={prop.props.id} alt={prop.props.name}/>
-            <p id='cart-product-des'>   ddd  {prop.props.des}</p>
-            <p id="cart-product-price"> {prop.props.price}</p>   
+            <div id='cart-container'>
+            <p id='cart-product-des'>   {prop.props.des}</p>
+            <p id="cart-product-price"> {prop.props.price}</p>
+            </div>
+               
                    
         </div>
        

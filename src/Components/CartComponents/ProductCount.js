@@ -1,14 +1,13 @@
 import React from 'react';
-
+import '../../Styles/CartStyles/CartButtonStyles.css'
 
 
 function ProductCounter(prop,fun) {
     
     
     const [count,setCount]=React.useState(1);
-       
-
-
+    
+  
        const incHandler=()=>{
            
                 setCount((prevCount)=>prevCount+1)
@@ -34,12 +33,12 @@ function ProductCounter(prop,fun) {
   
     
     return ( 
-        <>
-        <button onClick={incHandler}>+</button>
-        <p>{count}</p>
-        <button onClick={decHandler}>-</button>
+        <div id='count-container'>
+        <button onClick={incHandler} className='count-button'>+</button>
+        <p className='count-value'>{count}</p>
+        <button onClick={decHandler} className='count-button'>-</button>
        
-        </>
+        </div>
      );
 }
 

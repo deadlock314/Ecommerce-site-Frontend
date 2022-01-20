@@ -1,0 +1,21 @@
+.count-button{
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    background-color:#ff6701 ;
+    width: 35px;
+    height: 25px;
+    display: inline-block;
+    color: black;
+    font-size: 1.2rem;
+}
+.count-value{
+     display: inline-block;
+     margin: 0px 7px 0px 7px;
+    font-size: 1.2rem;
+}
+#count-container{
+    display: flex;
+    margin: 7px 35px;
+    
+}
