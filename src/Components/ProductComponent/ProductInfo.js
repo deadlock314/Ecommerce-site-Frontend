@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ProductInfoStruct from './ProductInfoStruct';
 import productInfoObj from '../../data/productInfoObj';
-import '../../Styles/productInfoStyles.css';
+import '../../Styles/ProductInfoStyles/productInfoStyles.css';
 function ProductInfo() {
     
  const params=useParams();

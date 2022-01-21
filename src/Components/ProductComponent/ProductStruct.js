@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Styles/productStyles.css';
+import '../../Styles/ProductInfoStyles/productStyles.css';
 import { useNavigate } from 'react-router';
 
 function ProductStruct(productList) {

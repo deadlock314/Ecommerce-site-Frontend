@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductStruct from './ProductStruct';
 import Productdata from '../../data/productData';
-import '../../Styles/productStyles.css';
+import '../../Styles/ProductInfoStyles/productStyles.css';
 function Products() {
 
     const [productList,useUpdateProductList]=React.useState(Productdata);
