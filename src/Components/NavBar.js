@@ -12,12 +12,12 @@ class NavBar extends React.Component {
             <div>
                 <nav>
                 <ul>
-                    <Link to='/'>
+                    
                     <li className='company-name'>
+                        <Link to='/'>
                         <p>EccentricStore</p>
+                        </Link>
                     </li>
-                    </Link>
-
                     <li className='cart'>
                         <Link to='/cart'>
                             <i className='fa fa-shopping-cart'> cart</i>
@@ -25,7 +25,8 @@ class NavBar extends React.Component {
                     </li>
                     <li className='login'>
                         <Link to='/login'>LogIn</Link>
-                    </li>   
+                    </li>  
+                     
                 </ul>   
                 </nav>
             </div>
