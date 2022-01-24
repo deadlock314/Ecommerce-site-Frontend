@@ -1,0 +1,54 @@
+.login-wrapper{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 25vh 0 30vh 0;
+    
+}
+
+.form{
+    display: grid;
+    background-color: var(--bgcolor);
+    padding: 20px;
+    width: 360px;
+    height: 300px;
+}
+.form button{
+    display: inline-block;
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ff6701;
+    width: 60px;
+    height: 28px;
+    margin: 10px 0 15px 130px;
+    border: 1px solid #ff6701;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 1.2rem;
+    
+}
+.form label{
+    display: inline-block;
+    all: unset;
+    font-size: 1.2rem;
+    padding: 6px 0 0 30px;
+    
+    
+}
+.form input{
+    display: inline-block;
+    width: 245px;
+    height: 26px;
+    margin: 3px 0 0 40px;
+}
+#fpass{
+    font-size: 0.95rem;
+    padding: 2px 0 0 69px;
+    color: blue;
+}
+.form p{
+    padding-left: 38px;
+}
+
+
