@@ -1,10 +1,21 @@
 import React from 'react';
 import ProductStruct from './ProductStruct';
-import Productdata from '../../data/productData';
 import '../../Styles/ProductInfoStyles/productStyles.css';
+import axios from 'axios';
 function Products() {
 
-    const [productList,useUpdateProductList]=React.useState(Productdata);
+    
+
+    const [productList,useUpdateProductList]=React.useState([{id:0,imgLink:''}]);
+    React.useEffect(()=>{
+       axios.get('https://ecommerce-app-api-1.herokuapp.com/',{withCredentials:true}).then((res)=>{
+        console.log(res.data)
+        useUpdateProductList(res.data);
+    }).catch((err)=>{
+        console.log(err)
+    })  
+    },[])
+   
 
     return ( 
         <>
