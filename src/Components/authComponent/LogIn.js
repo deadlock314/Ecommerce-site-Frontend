@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React ,{useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../../Styles/loginStyles.css';
+import '../../Styles/FormStyles.css';
 
  function LogIn() {
     const redirect = useNavigate();
@@ -34,15 +34,15 @@ import '../../Styles/loginStyles.css';
         }
     
         return (
-            <div className='login-wrapper'>
+            <div className='auth-wrapper'>
                  <form className="form">
-                <label htmlFor="email" >Email : </label>
+                 <label htmlFor="email" >Email : </label>
                 <input type="email" name="email" id='email' value={user.email} onChange={changeHandler}/>  
                 <label htmlFor="password" > Password : </label>
                 <input type='text' name="password" id='password' value={user.password}  onChange={changeHandler}/>
                 <Link id='fpass' to='/forgotpassword'>forgot your password</Link> 
-                <button type='submit' onClick={clickHandler}>logIn</button>
-                <p>Didn't have any account ?<Link id='signup' to='/signup'> Sign Up</Link></p>
+                <button type='submit' onClick={clickHandler}>LogIn</button>
+                <p>Didn't have any account ?<Link className='auth-link' to='/signup'> Sign Up</Link></p>
                 
                 <p>Right Now and enjoy your shoping ... </p>
             </form>

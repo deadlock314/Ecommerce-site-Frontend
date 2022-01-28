@@ -24,7 +24,7 @@ nav{
 }
 
 .login a:hover{
-    color:#12bde7;
+    color:var(--hovercolor);
     opacity: 1;
 }
 .company-name a{

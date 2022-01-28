@@ -4,10 +4,13 @@ import SudoComponent from './SudoComponent';
 import ProductCounter from './ProductCount';
 import PastDataFun from '../../HelperFun/PastDataFun';
 import '../../Styles/CartStyles/CartPS.css';
+import { useNavigate } from 'react-router';
 
 
 function CartWithProduct(prop) {
 
+
+  const redirect=useNavigate();
   let pastCartData=sessionStorage.getItem('CartProductKey');
 
 let pastdata=[];
@@ -80,6 +83,11 @@ const [count,setCount]=React.useState(1)
         <div id='calc'>    
      
     <p className='calc-value'>Total Amount ₹{priceObj.totalAmount }</p>
+
+    <button id='buypage-button' onClick={()=>{
+        redirect('/buyingpage/morethanonep');
+    }}>Buy Now</button>
+
     <SudoComponent props={priceObj} />
     
       </div>    

@@ -1,0 +1,33 @@
+.emptycart{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 25vh 0 22vh 0;
+    background-color: var(--bgcolor);
+}
+
+img {
+    width: 50vh;
+    height: 40vh;
+   
+}
+.emptycart-btn{
+    all: unset;
+    cursor: pointer;
+    color:white;
+    background-color: #ff6701;
+     margin: 0px 0px 30px 40px;
+    font-size: 1.2rem;
+    width: 80%;
+    height: 40px;
+    text-align: center;
+    
+}
+.emptycart-btn:hover{
+    color: var(--hovercolor);
+}
+.emptycart p{
+    display: block;
+    margin: 40px;
+    font-size: 1.4rem;
+}

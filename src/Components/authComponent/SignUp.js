@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,Link } from 'react-router-dom';
+import '../../Styles/FormStyles.css';
 
 function SignUp() {
     const redirect = useNavigate();
@@ -32,13 +33,19 @@ function SignUp() {
         
     })}
 
-    return ( 
-        <form>
-            <label htmlFor="name" >Name : <input type='text' name='name' id='name' value={user.name} onChange={changeHandler} /></label><br />
-            <label htmlFor="email" >Email : <input type="email" name='email' id='email' value={user.email} onChange={changeHandler}/>  </label><br />
-            <label htmlFor="password" > Password : <input type='text' name='password' id='password' value={user.password}  onChange={changeHandler}/> </label><br />
-            <button type='submit' onClick={clickHandler}>signUp</button>
+    return (
+        <div className='auth-wrapper'> 
+        <form className="form">
+            <label htmlFor="name" >Name : </label><br />
+            <input type='text' name='name' id='name' value={user.name} onChange={changeHandler} />
+            <label htmlFor="email" >Email : </label>
+            <input type="email" name="email" id='email' value={user.email} onChange={changeHandler}/>  
+            <label htmlFor="password" > Password : </label>
+            <input type='text' name="password" id='password' value={user.password}  onChange={changeHandler}/>
+            <button type='submit' onClick={clickHandler}>Sign Up</button>
+            <p>already have an account ?<Link className='auth-link' to='/login'> LogIn</Link> </p>
         </form>
+        </div>
    
     );
 }

@@ -9,13 +9,13 @@ redirect(`/cart/${e.target.name}`);
 } 
 
     
-    const BuyNowHandler=(e)=>{
+    const BuyNowHandlerWithSingleP=(e)=>{
         redirect(`/buyingpage/${e.target.name}`)
     }
 
     return (  
         <>
-        <button className='productInfo-button' name={props.prop.id} onClick={BuyNowHandler} >Buy Now</button>
+        <button className='productInfo-button' name={props.prop.id} onClick={BuyNowHandlerWithSingleP} >Buy Now</button>
         <button className='productInfo-button' name={props.prop.id} onClick={AddToCartHandler}>Add to Cart</button>
         </>
     );
