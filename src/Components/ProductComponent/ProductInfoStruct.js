@@ -2,11 +2,14 @@ import React from 'react';
 import ExtendedDes from './ExtendedDes';
 import CartButtons from '../CartButtons';
 import Ratings from './Ratings';
-function ProductInfoPropsInfoStruct(props) {
-   
+function PropsInfoStruct(props) {
+ 
+
      const productInfoProps=props.product;
+     
     return ( 
-        <div className="productInfoProps-struct" key={productInfoProps.id} >
+       <>
+       {productInfoProps?<div className="productInfoProps-struct" key={productInfoProps.productId} >
            <div className='productInfo-left-container'>
            <img id='productInfo-image' src={productInfoProps.imgLink}   alt={productInfoProps.name}/>
           <CartButtons prop={productInfoProps}/> 
@@ -19,7 +22,9 @@ function ProductInfoPropsInfoStruct(props) {
            </div>
            
               
-        </div> );
+        </div> :<>  </>}
+        </>
+         );
 }
 
-export default ProductInfoPropsInfoStruct;
+export default PropsInfoStruct;

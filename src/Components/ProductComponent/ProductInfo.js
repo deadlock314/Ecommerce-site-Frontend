@@ -1,19 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ProductInfoStruct from './ProductInfoStruct';
-import productInfoObj from '../../data/productInfoObj';
+import getProductData from '../../HelperFun/getProductData';
 import '../../Styles/ProductInfoStyles/productInfoStyles.css';
-function ProductInfo() {
-    
- const params=useParams();
-const [ productInfo,setProductInfo]=useState(productInfoObj)
 
-//const productInfoContext=React.createContext(ProductInfo);
- const singleProduct=productInfo.filter((elem)=>elem.id==params.ProductId)
+function ProductInfo(prop) {
+    
+ const param=useParams();
+
+
+
+const [ productInfo,setProductInfo]=useState();
+const [loading ,setLoading]=useState(true);
+
+useEffect(()=>
+{
+     const FetchData=async()=>{
+    const res= await getProductData(param)
+    setProductInfo(res)
+    setLoading(false)
+
+}
+   FetchData();
+
+},[]);
+
+
     return ( 
     <>
-   <ProductInfoStruct product={singleProduct[0]}></ProductInfoStruct>
-    </> );
+    {loading ?(<></>) :(<ProductInfoStruct product={ productInfo} />)}
+   
+   </>
+   );
 }
 
 export default ProductInfo;
