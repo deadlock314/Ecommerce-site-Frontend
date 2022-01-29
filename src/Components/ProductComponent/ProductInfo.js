@@ -26,6 +26,8 @@ useEffect(()=>
 },[]);
 
 
+
+
     return ( 
     <>
     {loading ?(<></>) :(<ProductInfoStruct product={ productInfo} />)}
