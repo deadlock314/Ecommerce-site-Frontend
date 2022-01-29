@@ -15,8 +15,8 @@ redirect(`/cart/${e.target.name}`);
 
     return (  
         <>
-        <button className='productInfo-button' name={props.prop.id} onClick={BuyNowHandlerWithSingleP} >Buy Now</button>
-        <button className='productInfo-button' name={props.prop.id} onClick={AddToCartHandler}>Add to Cart</button>
+        <button className='productInfo-button' name={props.prop.productId} onClick={BuyNowHandlerWithSingleP} >Buy Now</button>
+        <button className='productInfo-button' name={props.prop.productId} onClick={AddToCartHandler}>Add to Cart</button>
         </>
     );
 }
