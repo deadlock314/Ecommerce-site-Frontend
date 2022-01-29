@@ -3,7 +3,7 @@ import '../../Styles/ProductInfoStyles/productStyles.css';
 import { useNavigate } from 'react-router';
 
 function ProductStruct(productList) {
-
+    
    
     const redirect=useNavigate();
     const ProductInfoFetch=(e)=>{

@@ -9,13 +9,16 @@ import Cart from './Components/CartComponents/Cart';
 import BuyingPage from './BuyingPageComponent/BuyingPage';
 import Footer from './Components/Footer';
 import './Styles/globalStyles.css';
+import CartProductContext from './HelperFun/Context';
 
 function App() {
-
-
+ 
+  
+  
   return (
-
- <BrowserRouter>
+<CartProductContext.Provider value={{priceObj:0, prevCartData:new Set()}}>
+<>
+<BrowserRouter>
  <NavBar/> 
  <Routes>
  <Route path='/' element={<Products/>}/>
@@ -29,6 +32,9 @@ function App() {
   </Routes>
  <Footer/>
  </BrowserRouter>
+</>
+</CartProductContext.Provider>
+ 
 
   )
    

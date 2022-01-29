@@ -1,96 +1,57 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import CartProductStruct from './CartProductStruct';
-import SudoComponent from './SudoComponent';
 import ProductCounter from './ProductCount';
-import PastDataFun from '../../HelperFun/PastDataFun';
 import '../../Styles/CartStyles/CartPS.css';
 import { useNavigate } from 'react-router';
-
+import CartProductContext from '../../HelperFun/Context';
 
 function CartWithProduct(prop) {
 
-
+  
   const redirect=useNavigate();
-  let pastCartData=sessionStorage.getItem('CartProductKey');
 
-let pastdata=[];
-let pastNormData=[];
+const ContextObj=useContext(CartProductContext);
 
-if(pastCartData==null){
- pastdata=[]
-sessionStorage.setItem('CartProductKey',JSON.stringify( PastDataFun(pastdata.concat(prop.props)) )) 
-}
-
-else{
-pastNormData=JSON.parse(pastCartData);
-sessionStorage.setItem('CartProductKey',JSON.stringify( PastDataFun(pastNormData.concat(prop.props)) ))
-}
-
-
-
-
-  let [priceObj,setPriceObj]=React.useState({price:prop.props[0].priceInt,discount:prop.props[0].discountInt,totalAmount:prop.props[0].priceInt-prop.props[0].discountInt})
-  let pastData=sessionStorage.getItem('sessionPriceObj');
-     
-  if(pastData==null)
-  {
-     pastData=JSON.parse(pastData);
-     pastData={price:0,discount:0,totalAmount:0}
-  }
-
-  else {
-
-   pastData=JSON.parse(pastData)
-  }
-
-const [count,setCount]=React.useState(1)
+const [setToArray ,setSetToArray]= useState([]);
+const [count,setCount]=React.useState(1);
 
   const sendDataToCalculator=(cdata)=>{
 
     setCount(cdata.count)
-    priceObj.totalAmount=priceObj.totalAmount+cdata.totalAmount*cdata.mode;
+    ContextObj.priceObj=ContextObj.priceObj+cdata.totalAmount*cdata.mode;
     setPriceObj(priceObj);
-    
-
   }
 
-   React.useEffect(()=>{
-
-    if(priceObj.price != 2*pastData.price || pastData.price !=0)
-    {
-    priceObj.totalAmount=priceObj.totalAmount+pastData.totalAmount;
-     setPriceObj(priceObj);
-    
-    }
-
-  },[]);
-
+  React.useEffect(()=>{
+    ContextObj.priceObj=ContextObj.priceObj+prop.props[0].price;
+    ContextObj.prevCartData.add(JSON.stringify(prop.props[0]))
+    setSetToArray(Array.from(ContextObj.prevCartData))
+  },[]) 
+  console.warn(ContextObj.prevCartData)
     return ( 
                 
         <>
        {
-           prop.props.map((cartProduct)=>{
+          setToArray.map(( cartProduct )=>{
             return(
-              <>
-              <CartProductStruct props={cartProduct}  />
-              <ProductCounter props={cartProduct} fun={sendDataToCalculator}/>
+              <div key={cartProduct._id}>
+              <CartProductStruct props={JSON.parse(cartProduct)}  />
+              <ProductCounter props={JSON.parse(cartProduct)} fun={sendDataToCalculator}/>
                
-            </>
+            </div>
         ); 
         })
        }
        <hr/>
-        <div id='calc'>    
+
+          <div id='calc'>    
      
-    <p className='calc-value'>Total Amount ₹{priceObj.totalAmount }</p>
-
-    <button id='buypage-button' onClick={()=>{
-        redirect('/buyingpage/morethanonep');
-    }}>Buy Now</button>
-
-    <SudoComponent props={priceObj} />
+              <p className='calc-value'>Total Amount ₹{ContextObj.priceObj}</p>
+              <button id='buypage-button' onClick={()=>redirect('/buyingpage/morethanonep')}>Buy Now</button>
+              {/* <SudoComponent props={priceObj} /> */}
     
-      </div>    
+          </div> 
+
         </>
         );
 }
