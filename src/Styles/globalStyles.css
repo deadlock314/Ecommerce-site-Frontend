@@ -6,11 +6,12 @@
     list-style: none;
 }
 :root{
-    --color:#a52a1a;
+    --color:#922719;
     --bgcolor: #fbfbfb;
-    --hovercolor:#12bde7;
+    --hovercolor:#2d9acc;
 }
 body{
     background-color: #efefef;
-    margin: 0px;
+    
+  
 }

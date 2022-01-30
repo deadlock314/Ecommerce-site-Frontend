@@ -5,6 +5,7 @@ import './../Styles/FooterStyles.css'
 function Footer() {
     return ( 
         <>
+        <footer>
         <div className='footer-outerarea'>
         <div className='footer-col'>
             <div className='footer-row'>
@@ -36,7 +37,7 @@ function Footer() {
         </div>
         </div>
         <p id='cpright'>  &copy; Copyright { new Date().getFullYear()} EccentricStore</p>
-
+        </footer>
         </>
      );
 }

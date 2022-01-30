@@ -1,38 +1,66 @@
 
 
-nav{
-    background-color:var(--color);
-    width: 100%;
-    height: 76px;
+#navbar{
+    background-color:#165161;
+    
+     
 }
+#upper-nav{
+    display: flex;
+    padding:13px 3vw 7px 5vw;
+    justify-content: space-between;
+    
+}
+#lower-nav{
+    display: flex;
+    padding: 3px 5vw 5px 5vw;
+    background-color:#771306;
+   
+}
+.cart{
+   padding-left: 60%; 
+}
+ 
 .cart a{ 
-    background-color:var(--color);
+
     cursor: pointer;
-    float: right;
     text-decoration: none;
-    margin: 18px 23px;
-    font-size: 27px;
-    color: white;
+    font-size: 1.8vw;
+   
+     color: white;
 }
 
 .login a{
- float: right;
- margin: 25px 4px;
- font-size: 20px;
+ font-size: 1.7vw;
  color: white;
 
+
 }
 
-.login a:hover{
+.login a:hover , .home-purl a:hover{
     color:var(--hovercolor);
     opacity: 1;
+   
 }
 .company-name a{
-    float: left;
-    margin: 16px 40px;
-    font-size: 33px;
+    font-size: 2.5vw;
     color:yellow;
 }
+
+.home-purl a{
+color: white;
+padding-right: 40px;
+font-size: 1.45vw;
+}
+
+
+
+
+
+
+
+
+
 
 
 
