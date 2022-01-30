@@ -30,13 +30,13 @@ class NavBar extends React.Component {
                     </div>
                     <div id='lower-nav'>
                         <div className='home-purl'>
-                        < Link to='/'>Mobiles</Link>
+                        < Link to='/products/mobiles'>Mobiles</Link>
                         </div>
                         <div className='home-purl'>
-                        < Link to='/'>Laptops</Link>
+                        < Link to='/products/laptops'>Laptops</Link>
                         </div>
                         <div className='home-purl'>
-                        < Link to='/'>Earphones</Link>
+                        < Link to='/products/earphones'>Earphones</Link>
                         </div>
 
                     </div>  

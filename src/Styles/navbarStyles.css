@@ -7,7 +7,7 @@
 }
 #upper-nav{
     display: flex;
-    padding:13px 3vw 7px 5vw;
+    padding:13px 3vw 10px 5vw;
     justify-content: space-between;
     
 }
@@ -43,7 +43,7 @@
    
 }
 .company-name a{
-    font-size: 2.5vw;
+    font-size: 2.6vw;
     color:yellow;
 }
 

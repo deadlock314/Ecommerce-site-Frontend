@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ProductInfoStruct from './ProductInfoStruct';
-import getProductData from '../../HelperFun/getProductData';
+import {getProductInfoData} from '../../HelperFun/getProductData';
 import '../../Styles/ProductInfoStyles/productInfoStyles.css';
 
 function ProductInfo(prop) {
@@ -16,7 +16,7 @@ const [loading ,setLoading]=useState(true);
 useEffect(()=>
 {
      const FetchData=async()=>{
-    const res= await getProductData(param)
+    const res= await getProductInfoData(param)
     setProductInfo(res)
     setLoading(false)
 

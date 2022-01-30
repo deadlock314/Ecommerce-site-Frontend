@@ -1,29 +1,34 @@
 import React,{useEffect,useState} from 'react';
 import ProductStruct from './ProductStruct';
 import '../../Styles/ProductInfoStyles/productStyles.css';
-import axios from 'axios';
+import { useParams } from 'react-router';
+import {getProductListData}  from '../../HelperFun/getProductData';
 function Products() {
 
-    
+    const parmas=useParams();
 
-    const [productList,useUpdateProductList]=useState([{}]);
+    const [productList,setProductList]=useState([{}]);
     const [loading ,setLoading]=useState(true);
-    useEffect(()=>{
-       axios.get('https://ecommerce-app-api-1.herokuapp.com/',{withCredentials:true}).then((res)=>{
+    useEffect(()=>
+    {
+         const FetchData=async()=>{
        
-        useUpdateProductList(res.data);
+        let url =(parmas.productName)?`https://ecommerce-app-api-1.herokuapp.com/products/${parmas.productName}` :'https://ecommerce-app-api-1.herokuapp.com/';
+        const res= await getProductListData(url)
+        setProductList(res)
         setLoading(false)
-    }).catch((err)=>{
-        console.log(err)
-    })  
-    },[])
+    
+    }
+       FetchData();
+    
+    },[]);
    
 
     return ( 
         <>
         {
             loading ?<> </> : <>
-            <h1 className='main-title'>Laptops</h1>
+            <p className='main-title'>Laptops</p>
             <div className='product-container'>
             
                 <ProductStruct props={productList} />

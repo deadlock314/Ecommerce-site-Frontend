@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import EmptyCart from './EmptyCart';
 import CartWithProduct from './CartWithProduct';
 import { useParams } from 'react-router'; 
-import getProductData from '../../HelperFun/getProductData';
+import {getProductInfoData} from '../../HelperFun/getProductData';
 
 
 function Cart() {
@@ -16,7 +16,7 @@ const [loading ,setLoading]=useState(true);
 useEffect(()=>
 {
      const FetchData=async()=>{
-    const res= await getProductData(param)
+    const res= await getProductInfoData(param)
     setCartProduct([res])
     setLoading(false)
 

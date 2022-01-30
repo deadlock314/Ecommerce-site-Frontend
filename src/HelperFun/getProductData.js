@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getProductData=async(prop)=>{
+const getProductInfoData=async(prop)=>{
  
   
   try{
@@ -13,4 +13,16 @@ const getProductData=async(prop)=>{
     return({})
   }
 }
-export default getProductData;
+
+const getProductListData=async(url)=>{
+ 
+  
+  try{
+      const productList=await axios.get(url);
+      return productList.data;
+  }
+  catch{
+    return([])
+  }
+}
+export { getProductInfoData,getProductListData};

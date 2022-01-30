@@ -22,6 +22,7 @@ function App() {
  <NavBar/> 
  <Routes>
  <Route path='/' element={<Products/>}/>
+ <Route path='/products/:productName' element={<Products/>}/>
  <Route path='/login' element={<LogIn/>} />
  <Route path='/signup' element={<SignUp/>} />
  <Route path='/cart/:ProductId' element={<Cart/>}/>
