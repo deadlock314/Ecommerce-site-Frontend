@@ -24,19 +24,19 @@ function Products() {
     
     },[productType]);
 
+    const  newProductType=(typeof(productType)=='undefined')?'laptops':productType;
+
     return ( 
         <>
         {
-            loading ?<> </> : <>
-            <p className='main-title'>{productType || 'laptops'}</p>
-            <div className='product-container'>
-            
-                <ProductStruct props={productList} />
+            loading ?<> </> :
+            <div className='home-container'>
+                <p className='main-title'> {newProductType }</p>
+                <div className='product-container'>
+                    <ProductStruct props={productList} />
+                </div>
             </div>
-            </>
         }
-        
-      
         </>
      );
 }

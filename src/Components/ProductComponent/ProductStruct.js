@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/ProductInfoStyles/productStyles.css';
 import { useNavigate } from 'react-router';
-
+import ContextObj from '../../HelperFun/Context';
 function ProductStruct(productList) {
 
     const redirect=useNavigate();
@@ -12,7 +12,8 @@ function ProductStruct(productList) {
 
           }
 
-          
+    
+          const  newProductType=(typeof(ContextObj.productType)=='undefined')?'laptops':ContextObj.productType;     
     return ( 
         <>
     {
@@ -20,10 +21,13 @@ productList.props.map((product)=>{
 
     return(
         
-            <div className="product-struct" key={product.productId} onClick={ProductInfoFetch} >
-                <img id='product-image' src={product.imgLink}  name={product.productId} alt={product.name}/>
-                <p id='product-des'> {product.des}</p>
-                <p id="product-price">{product.price}</p>   
+            <div className="product-struct" id={`product-struct-${newProductType}`} key={product.productId} onClick={ProductInfoFetch} >
+                <div >
+                    <img className='product-image' src={product.imgLink}  name={product.productId} alt={product.name}/>
+                    <p id='product-des'> {product.des}</p>
+                    <p id="product-price">{product.price}</p>   
+                </div>
+                
             </div>
          );
  })      
