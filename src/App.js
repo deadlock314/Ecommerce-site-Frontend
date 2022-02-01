@@ -16,7 +16,7 @@ function App() {
   
   
   return (
-<CartProductContext.Provider value={{priceObj:0, prevCartData:new Set() ,productType:''}}>
+<CartProductContext.Provider value={{priceObj:'00', prevCartData:new Set() ,productType:''}}>
 <>
 <BrowserRouter>
  <NavBar/> 
