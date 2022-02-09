@@ -22,7 +22,7 @@ import '../Styles/FormStyles.css';
                 if(res.data.isUserLoggedIn){
                     alert('user succesfully Logged-In') 
                      setUser ({email:'' ,password:''})
-                    redirect("/");
+                    redirect(`/user/${res.data._id}`);
                 }
                 else{
                     alert('something went wrong try again');
