@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ProductInfoStruct from './ProductInfoStruct';
-import {getProductInfoData} from '../../HelperFun/getProductData';
-import '../../Styles/ProductInfoStyles/productInfoStyles.css';
+import {getProductInfoData} from '../HelperFun/getProductData';
+import '../Styles/ProductInfoStyles/productInfoStyles.css';
 
 function ProductInfo(prop) {
     

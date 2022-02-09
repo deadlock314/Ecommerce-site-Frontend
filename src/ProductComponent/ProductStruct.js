@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../Styles/ProductInfoStyles/productStyles.css';
+import '../Styles/ProductInfoStyles/productStyles.css';
 import { useNavigate } from 'react-router';
-import ContextObj from '../../HelperFun/Context';
+import ContextObj from '../HelperFun/Context';
 function ProductStruct(productList) {
 
     const redirect=useNavigate();

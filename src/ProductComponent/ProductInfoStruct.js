@@ -2,7 +2,7 @@ import React from 'react';
 import ExtendedDes from './ExtendedDes';
 import CartButtons from '../CartButtons';
 import Ratings from './Ratings';
-import ContextObj from '../../HelperFun/Context';
+import ContextObj from '../HelperFun/Context';
 
 function PropsInfoStruct(props) {
  

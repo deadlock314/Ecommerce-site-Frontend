@@ -1,9 +1,9 @@
 import React,{useEffect,useState} from 'react';
 import ProductStruct from './ProductStruct';
-import '../../Styles/ProductInfoStyles/productStyles.css';
+import '../Styles/ProductInfoStyles/productStyles.css';
 import { useParams } from 'react-router';
-import {getProductListData}  from '../../HelperFun/getProductData';
-import ContextObj from '../../HelperFun/Context';
+import {getProductListData}  from '../HelperFun/getProductData';
+import ContextObj from '../HelperFun/Context';
 function Products() {
 
     const parmas=useParams();

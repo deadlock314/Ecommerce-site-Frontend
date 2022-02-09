@@ -27,6 +27,17 @@ display: inline-block;
     margin-left: 19px;
     
 }
+#cart-del-button{
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    background-color:#ff6701 ;
+    width: 35px;
+    height: 25px;
+    display: inline-block;
+    color: black;
+    font-size: 1.2rem;
+}
 
 #calc{
     

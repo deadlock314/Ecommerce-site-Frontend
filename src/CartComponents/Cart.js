@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import EmptyCart from './EmptyCart';
 import CartWithProduct from './CartWithProduct';
 import { useParams } from 'react-router'; 
-import {getProductInfoData} from '../../HelperFun/getProductData';
+import {getProductInfoData} from '../HelperFun/getProductData';
 
 
 function Cart() {

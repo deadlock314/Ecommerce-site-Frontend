@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter,Routes ,Route} from 'react-router-dom';
-import NavBar from './Components/NavBar';
-import LogIn from './Components/authComponent/LogIn';
-import SignUp from './Components/authComponent/SignUp'
-import ProductInfo from './Components/ProductComponent/ProductInfo';
-import Products from './Components/ProductComponent/Products';
-import Cart from './Components/CartComponents/Cart';
+import NavBar from './NavBar';
+import LogIn from './authComponent/LogIn';
+import SignUp from './authComponent/SignUp'
+import ProductInfo from './ProductComponent/ProductInfo';
+import Products from './ProductComponent/Products';
+import Cart from './CartComponents/Cart';
 import BuyingPage from './BuyingPageComponent/BuyingPage';
-import Footer from './Components/Footer';
+import Footer from './Footer';
 import './Styles/globalStyles.css';
 import CartProductContext from './HelperFun/Context';
 

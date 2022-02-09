@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import CartProductStruct from './CartProductStruct';
 import ProductCounter from './ProductCount';
-import '../../Styles/CartStyles/CartPS.css';
+import '../Styles/CartStyles/CartPS.css';
 import { useNavigate } from 'react-router';
-import CartProductContext from '../../HelperFun/Context';
-import {priceAdder} from '../../HelperFun/priceAdder';
+import CartProductContext from '../HelperFun/Context';
+import {priceAdder} from '../HelperFun/priceAdder';
 function CartWithProduct(prop) {
 
   
@@ -27,18 +27,21 @@ console.log(prop.props[0].price);
     setSetToArray(Array.from(ContextObj.prevCartData))
   },[]);
 
-  
+
     return ( 
-                
-        <>
+      <>
        {
           setToArray.map(( cartProduct )=>{
             return(
-              <div key={cartProduct._id}>
-              <CartProductStruct props={JSON.parse(cartProduct)}  />
-              <ProductCounter props={JSON.parse(cartProduct)} fun={sendDataToCalculator}/>
+              <div key={ new Date().getMilliseconds}>
+              {
+                (cartProduct!="{}")?<> <CartProductStruct props={JSON.parse(cartProduct)}  />
+                                     <ProductCounter props={JSON.parse(cartProduct)} fun={sendDataToCalculator}/>
+                                  </>
+                                  :<></>
                
-            </div>
+              }
+              </div>
         ); 
         })
        }
@@ -46,10 +49,9 @@ console.log(prop.props[0].price);
 
           <div id='calc'>    
      
-              <p className='calc-value'>Total Amount {ContextObj.priceObj}</p>
-              <button id='buypage-button' onClick={()=>redirect('/buyingpage/morethanonep')}>Buy Now</button>
-              {/* <SudoComponent props={priceObj} /> */}
-    
+            <p className='calc-value'>Total Amount {ContextObj.priceObj}</p>
+            <button id='buypage-button' onClick={()=>redirect('/buyingpage/morethanonep')}>Buy Now</button>
+            
           </div> 
 
         </>
