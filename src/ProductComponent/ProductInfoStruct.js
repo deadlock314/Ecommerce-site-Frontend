@@ -1,6 +1,6 @@
 import React from 'react';
 import ExtendedDes from './ExtendedDes';
-import CartButtons from '../CartButtons';
+import CartButtons from '../unitComponent/CartButtons';
 import Ratings from './Ratings';
 import ContextObj from '../HelperFun/Context';
 
