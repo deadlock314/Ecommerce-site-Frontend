@@ -3,15 +3,15 @@ import CartProductStruct from './CartProductStruct';
 import ProductCounter from './ProductCount';
 import '../Styles/CartStyles/CartPS.css';
 import { useNavigate } from 'react-router';
-import CartProductContext from '../HelperFun/Context';
+import {CartContextArr,ContextArr} from '../HelperFun/Context';
 import {priceAdder} from '../HelperFun/priceAdder';
 function CartWithProduct(prop) {
 
   
-  const redirect=useNavigate();
+const redirect=useNavigate();
 
-const ContextObj=useContext(CartProductContext);
-
+const Cartcontextarr=useContext(CartContextArr);
+const Contextarr=useContext(ContextArr);
 const [setToArray ,setSetToArray]= useState([]);
 const [count,setCount]=React.useState(1);
 
@@ -21,10 +21,10 @@ const [count,setCount]=React.useState(1);
 console.log(prop.props[0].price);
 
   React.useEffect(()=>{
-    ContextObj.priceObj= '₹'+priceAdder(ContextObj.priceObj,prop.props[0].price);
+    Contextarr[1]( {...Contextarr[0],priceObj: priceAdder(Contextarr[0].priceObj,prop.props[0].price)});
     
-    ContextObj.prevCartData.add(JSON.stringify(prop.props[0]))
-    setSetToArray(Array.from(ContextObj.prevCartData))
+    Cartcontextarr[1]({...Cartcontextarr[0], prevCartData:Cartcontextarr[0].prevCartData.add(JSON.stringify(prop.props[0])) })
+    setSetToArray(Array.from(Cartcontextarr[0].prevCartData))
   },[]);
 
 
@@ -49,7 +49,7 @@ console.log(prop.props[0].price);
 
           <div id='calc'>    
      
-            <p className='calc-value'>Total Amount {ContextObj.priceObj}</p>
+            <p className='calc-value'>Total Amount  ₹{Contextarr[0].priceObj}</p>
             <button id='buypage-button' onClick={()=>redirect('/buyingpage/morethanonep')}>Buy Now</button>
             
           </div> 

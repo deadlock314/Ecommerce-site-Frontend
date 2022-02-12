@@ -1,10 +1,12 @@
 import axios from 'axios';
-import React ,{useState} from 'react';
+import React ,{useContext, useEffect, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/FormStyles.css';
+import {ContextArr} from '../HelperFun/Context';
 
  function LogIn() {
     const redirect = useNavigate();
+    const GlobalContextArr=useContext(ContextArr);
         let [user ,setUser] = useState({email:'' ,password:''});
      
         const changeHandler =e=>{
@@ -22,7 +24,9 @@ import '../Styles/FormStyles.css';
                 if(res.data.isUserLoggedIn){
                     alert('user succesfully Logged-In') 
                      setUser ({email:'' ,password:''})
-                    redirect(`/user/${res.data._id}`);
+                     //console.warn(res);
+                    GlobalContextArr[1]({...GlobalContextArr[0],isUserLoggedIn:res.data.isUserLoggedIn}); 
+                    redirect(`/user/${res.data._id}`,{state:res.data});
                 }
                 else{
                     alert('something went wrong try again');
@@ -32,6 +36,11 @@ import '../Styles/FormStyles.css';
             })
             
         }
+        useEffect(()=>{
+         
+            setUser({email:'' ,password:''})
+
+        },[GlobalContextArr[0].isUserLoggedIn])
     
         return (
             <div className='auth-wrapper'>

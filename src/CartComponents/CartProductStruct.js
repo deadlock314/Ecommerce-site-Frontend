@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/CartStyles/CartPS.css'
-import ContextObj from '../HelperFun/Context';
+//import ContextObj from '../HelperFun/Context';
 
 function CartProductStruct(prop) {
     
@@ -15,7 +15,7 @@ function CartProductStruct(prop) {
     //    )   
     //    console.warn(NJsonprevCartData.filter((doc)=>{
     //     return doc.productId !=e.target.name;}))
-    console.warn(ContextObj ,';')
+    // console.warn(ContextObj ,';')
 
     }
     return ( 

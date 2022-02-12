@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../Styles/ProductInfoStyles/productStyles.css';
 import { useNavigate } from 'react-router';
-import ContextObj from '../HelperFun/Context';
+import {ContextArr} from '../HelperFun/Context';
 function ProductStruct(productList) {
 
     const redirect=useNavigate();
+    const Contextarr=useContext(ContextArr)
     const ProductInfoFetch=(e)=>{
          
         (typeof(e.target.name) == undefined ||e.target.name== undefined) ?
@@ -13,7 +14,7 @@ function ProductStruct(productList) {
           }
 
     
-          const  newProductType=(typeof(ContextObj.productType)=='undefined')?'laptops':ContextObj.productType;     
+          const  newProductType=(typeof(Contextarr[0].productType)=='undefined')?'laptops':Contextarr[0].productType;     
     return ( 
         <>
     {

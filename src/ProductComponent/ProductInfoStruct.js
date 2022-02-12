@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ExtendedDes from './ExtendedDes';
 import CartButtons from '../unitComponent/CartButtons';
 import Ratings from './Ratings';
-import ContextObj from '../HelperFun/Context';
+import {ContextArr} from '../HelperFun/Context';
 
 function PropsInfoStruct(props) {
  
 
      const productInfoProps=props.product;
-     const  newProductType=(typeof(ContextObj.productType)=='undefined')?'laptops':ContextObj.productType;  
+     const Contextarr=useContext(ContextArr);
+
+     const  newProductType=(typeof(Contextarr[0].productType)=='undefined')?'laptops':Contextarr[0].productType;  
 
     return ( 
        <>
