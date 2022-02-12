@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../Styles/navbarStyles.css';
 import  'font-awesome/css/font-awesome.min.css';
 import {  Link } from 'react-router-dom';
 
+import AuthNav from './AuthNav';
 
-class NavBar extends React.Component {
 
-    render() { 
 
+const NavBar=()=>{
+
+    
+   
+      
+  
     return(
-        <header>
-        <div >
+   
+                
+    <header>
+            <div >
             <nav id='navbar'>
                
                     <div id='upper-nav'>
@@ -23,10 +30,9 @@ class NavBar extends React.Component {
                         <i className='fa fa-shopping-cart'> cart</i>
                         </Link>
                         </div>
-                        <div className='login'>
-                        < Link to='/login'>LogIn</Link>
-                        </div>
-        
+                               
+                <AuthNav/>
+ 
                     </div>
                     <div id='lower-nav'>
                         <div className='home-purl'>
@@ -45,10 +51,11 @@ class NavBar extends React.Component {
         </div>
     </header>
 
-            
+                
+         
         )
        
-    }
+    
 }
  
 export default NavBar;

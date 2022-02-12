@@ -21,7 +21,7 @@
    padding-left: 60%; 
 }
  
-.cart a{ 
+.cart a ,#nav-logout{ 
 
     cursor: pointer;
     text-decoration: none;
@@ -30,14 +30,14 @@
      color: white;
 }
 
-.login a{
+.login-logout a,#nav-logout{
  font-size: 1.7vw;
  color: white;
 
 
 }
 
-.login a:hover , .home-purl a:hover{
+.login-logout a:hover , .home-purl a:hover ,#nav-logout:hover{
     color:var(--hovercolor);
     opacity: 1;
    
