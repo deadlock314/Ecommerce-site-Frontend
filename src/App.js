@@ -10,14 +10,14 @@ import BuyingPage from './BuyingPageComponent/BuyingPage';
 import UserProfile from "./UserProfileComponent/UserProfile";
 import Footer from './unitComponent/Footer';
 import './Styles/globalStyles.css';
-import CartProductContext from './HelperFun/Context';
+import {GlobalContext} from './HelperFun/Context';
 
 function App() {
  
   
   
   return (
-<CartProductContext.Provider value={{priceObj:'00', prevCartData:new Set() ,productType:''}}>
+<GlobalContext>
 <>
 <BrowserRouter>
  <NavBar/> 
@@ -36,7 +36,7 @@ function App() {
  <Footer/>
  </BrowserRouter>
 </>
-</CartProductContext.Provider>
+</GlobalContext>
  
 
   )
