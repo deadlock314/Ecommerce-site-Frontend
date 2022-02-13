@@ -24,10 +24,16 @@ import {ContextArr} from '../HelperFun/Context';
                 if(res.data.isUserLoggedIn){
                     alert('user succesfully Logged-In') 
                      setUser ({email:'' ,password:''})
-                     //console.warn(res);
-                    GlobalContextArr[1]({...GlobalContextArr[0],isUserLoggedIn:res.data.isUserLoggedIn}); 
-                    redirect(`/user/${res.data._id}`,{state:res.data});
-                }
+                     axios.get(`https://ecommerce-app-api-1.herokuapp.com/user/${res.data.id}`,{withCredentials: true
+                    }).then((userdata)=>{
+                        if(userdata.data){
+                            GlobalContextArr[1]({...GlobalContextArr[0],isUserLoggedIn:res.data.isUserLoggedIn,userData:userdata.data}); 
+                    redirect(`/user/${res.data.id}`,{state:userdata.data});
+                    }
+                })
+                        }
+                        
+                    
                 else{
                     alert('something went wrong try again');
                 }
