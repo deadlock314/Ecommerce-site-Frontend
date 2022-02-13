@@ -1,13 +1,15 @@
-import React from 'react';
-import { useLocation } from 'react-router';
+import React, { useContext, useState } from 'react';
+import {ContextArr} from '../HelperFun/Context';
 
 
 const UserProfile=()=> {
-    const data=useLocation();
-    console.log(data,'x')
+    const contextarr=useContext(ContextArr)
+    const [profile,setProfile]=useState(contextarr[0].userData.userAccData);
+
+
     return ( 
         <>
-        logged in
+        <h1>Hi {profile.name} !!!</h1>
         </>
      );
     ;

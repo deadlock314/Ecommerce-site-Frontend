@@ -23,12 +23,12 @@ import {ContextArr} from '../HelperFun/Context';
         }).then((res)=>{
                 if(res.data.isUserLoggedIn){
                     alert('user succesfully Logged-In') 
-                     setUser ({email:'' ,password:''})
-                     axios.get(`https://ecommerce-app-api-1.herokuapp.com/user/${res.data.id}`,{withCredentials: true
+                        qsetUser ({email:'' ,password:''})
+                        axios.get(`https://ecommerce-app-api-1.herokuapp.com/user/${res.data.id}`,{withCredentials: true
                     }).then((userdata)=>{
                         if(userdata.data){
                             GlobalContextArr[1]({...GlobalContextArr[0],isUserLoggedIn:res.data.isUserLoggedIn,userData:userdata.data}); 
-                    redirect(`/user/${res.data.id}`,{state:userdata.data});
+                    redirect(`/user/${userdata.data.userAccData.userId}`);
                     }
                 })
                         }
