@@ -3,7 +3,7 @@ export const ContextArr=React.createContext()
 
 export const GlobalContext=(props)=>{
     const [globalContext,setGlobalContext]=useState(
-        {priceObj:'00' ,productType:'',isUserLoggedIn:false});
+        {priceObj:'00' ,productType:'',isUserLoggedIn:false,userData:{}});
     
     return(
         <ContextArr.Provider value={[globalContext,setGlobalContext]}>
