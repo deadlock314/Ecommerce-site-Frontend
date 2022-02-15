@@ -1,8 +1,11 @@
 
-export const priceAdder=(p1,p2)=>{
-  
+export const priceAdder=(p1,p2,mode)=>{
+
+const val=(mode=='sub')?-1:1;
+
    if(typeof(p2)=='undefined')
    return p1;
+   
    else{
       const strP1=(typeof(p1)=='string')?p1:p1.toString();
     const strP2=(typeof(p2)=='string')?p2:p2.toString();
@@ -13,8 +16,7 @@ export const priceAdder=(p1,p2)=>{
     }
     
     let priceStr;
-   
-    priceStr=filterComma(strP1.substring(1))+filterComma(strP2.substring(1));
+    priceStr=filterComma(strP1)+filterComma(strP2.substring(1))*val;
 
     return priceStr;
    }
