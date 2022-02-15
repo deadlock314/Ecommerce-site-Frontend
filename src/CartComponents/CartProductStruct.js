@@ -1,24 +1,23 @@
-import React from 'react';
-import '../Styles/CartStyles/CartPS.css'
+import React, { useContext } from 'react';
+import '../Styles/CartStyles/CartPS.css';
+//import {ContextArr} from '../HelperFun/Context';
 
 function CartProductStruct(prop) {
+   // const Contextarr=useContext(ContextArr)
     
 
-    const CartDelClickHandler=(e)=>{
-
-    }
+ 
     return ( 
        
         <>
    
-            < div className="cart-product-struct" key={prop.props.productId} >
+            < div className="cart-product-struct" key={prop.props._id}>
                <img id='cart-product-image' src={prop.props.imgLink} name={prop.props.productId} alt={prop.props.name}/>
                <div id='cart-container'>
                <p id='cart-product-des'>   {prop.props.des}</p>
                <p id="cart-product-price"> {prop.props.price}</p>
-               <button id='cart-del-btn' name={prop.props.productId} onClick={CartDelClickHandler}>Delete</button>
+               </div>
             </div>
-              </div>
       
         
         </>
