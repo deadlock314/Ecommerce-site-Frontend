@@ -1,34 +1,29 @@
-import React from 'react';
-import '../Styles/CartStyles/CartButtonStyles.css'
+import React, { useContext } from 'react';
+import { ContextArr } from '../HelperFun/Context';
+import '../Styles/CartStyles/CartButtonStyles.css';
+import {priceAdder} from '../HelperFun/priceAdder';
 
+function ProductCounter(prop) {
 
-function ProductCounter(prop,fun) {
-    
-    
-    const [count,setCount]=React.useState(1);
-    
-  
-       const incHandler=()=>{
-           
-                setCount((prevCount)=>prevCount+1);
-                prop.fun({count:count+1,price:prop.props.priceInt,discount:prop.props.discountInt,totalAmount:prop.props.priceInt-prop.props.discountInt,mode:1});
-            
-        
-    }
-
-    const decHandler=()=>{    
-        if(count < 2 )
-    setCount(1);
-    else{
-         setCount((prevCount)=>prevCount-1)
-         prop.fun({count:count-1,price:prop.props.priceInt,discount:prop.props.discountInt,totalAmount:prop.props.priceInt-prop.props.discountInt,mode:-1});
-         
-        }
+    const Contextarr=useContext(ContextArr);
+    const id=prop.props._id,productPrice=prop.props.price;
+    //console.warn(Contextarr[0].countObj,Contextarr[0].countObj[id] );
        
+    const [count,setCount]=React.useState(Contextarr[0].countObj[id]);
+        const incHandler=()=>{
+            setCount((prevCount)=>prevCount+1);
+            Contextarr[1]({...Contextarr[0],countObj:{[id]:count},priceObj:priceAdder(Contextarr[0].priceObj,productPrice,'add')})
+        }
+
+        const decHandler=()=>{    
+        if(count < 2 )
+        setCount(1);
+        else{
+            setCount((prevCount)=>prevCount-1)
+            Contextarr[1]({...Contextarr[0],countObj:{[id]:count},priceObj:priceAdder(Contextarr[0].priceObj,productPrice,'sub')})
+        }
     }
-    
-  
-    
+
     return ( 
         <div id='count-container'>
         <button onClick={incHandler} className='count-button'>+</button>

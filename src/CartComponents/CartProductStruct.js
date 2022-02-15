@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Styles/CartStyles/CartPS.css'
-//import ContextObj from '../HelperFun/Context';
 
 function CartProductStruct(prop) {
     
