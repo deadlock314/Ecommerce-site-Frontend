@@ -15,3 +15,27 @@ body{
     
   
 }
+.spin-container{
+    margin: 45vh 0 45vh 45vw;
+}
+
+.spinner {
+    border: solid 6px black;
+    border-radius: 55%;
+    height: 8vw;
+    width: 8vw;
+    transform: translate3d(-50%,-50%,0);
+    animation: spin 1.5s linear infinite;
+    animation-play-state: inherit;
+    will-change: tarnsform;
+
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}

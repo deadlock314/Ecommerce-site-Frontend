@@ -3,12 +3,13 @@ import React ,{useContext, useEffect, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/FormStyles.css';
 import {ContextArr} from '../HelperFun/Context';
+import Spinner from '../unitComponent/Spinner';
 
  function LogIn() {
     const redirect = useNavigate();
     const GlobalContextArr=useContext(ContextArr);
+    const [loading,setLoading]=useState(false);
         let [user ,setUser] = useState({email:'' ,password:''});
-     
         const changeHandler =e=>{
             const {name , value}=e.target;
             setUser((user) =>({
@@ -18,12 +19,15 @@ import {ContextArr} from '../HelperFun/Context';
         };
     
         const clickHandler =(e)=>{
+            
             e.preventDefault();
+      
             axios.post('https://ecommerce-app-api-1.herokuapp.com/login',user,{withCredentials: true
         }).then((res)=>{
                 if(res.data.isUserLoggedIn){
                     alert('user succesfully Logged-In') 
-                        qsetUser ({email:'' ,password:''})
+                    setLoading(true)
+                        setUser ({email:'' ,password:''})
                         axios.get(`https://ecommerce-app-api-1.herokuapp.com/user/${res.data.id}`,{withCredentials: true
                     }).then((userdata)=>{
                         if(userdata.data){
@@ -32,24 +36,26 @@ import {ContextArr} from '../HelperFun/Context';
                     }
                 })
                         }
-                        
+    
                     
                 else{
                     alert('something went wrong try again');
                 }
             }).catch((err)=>{
+                console.warn(err);
                     alert('something went wrong try again');
             })
             
         }
         useEffect(()=>{
-         
             setUser({email:'' ,password:''})
-
         },[GlobalContextArr[0].isUserLoggedIn])
     
         return (
-            <div className='auth-wrapper'>
+            <>
+            {
+                (loading)?<Spinner/>:
+                <div className='auth-wrapper'>
                  <form className="form">
                  <label htmlFor="email" >Email : </label>
                 <input type="email" name="email" id='email' value={user.email} onChange={changeHandler}/>  
@@ -61,6 +67,8 @@ import {ContextArr} from '../HelperFun/Context';
                 <p>Right Now and enjoy your shoping ... </p>
             </form>
             </div>
+            }
+            </>
            
            
         );  

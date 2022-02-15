@@ -4,6 +4,7 @@ import ProductInfoStruct from './ProductInfoStruct';
 import {getProductInfoData} from '../HelperFun/getProductData';
 import { ContextArr } from '../HelperFun/Context';
 import '../Styles/ProductInfoStyles/productInfoStyles.css';
+import Spinner from '../unitComponent/Spinner';
 
 function ProductInfo(prop) {
     
@@ -31,7 +32,7 @@ useEffect(()=>
 
     return ( 
     <>
-    {loading ?(<></>) :(<ProductInfoStruct product={ productInfo} />)}
+    {loading ?<Spinner/> :(<ProductInfoStruct product={ productInfo} />)}
    
    </>
    );

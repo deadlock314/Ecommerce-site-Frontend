@@ -4,10 +4,11 @@ import '../Styles/ProductInfoStyles/productStyles.css';
 import { useParams } from 'react-router';
 import {getProductListData}  from '../HelperFun/getProductData';
 import {ContextArr} from '../HelperFun/Context';
+import Spinner from '../unitComponent/Spinner';
 function Products() {
 
     const parmas=useParams();
-    const ProductType=parmas.productName;
+    const ProductType=(typeof(parmas.productName)=='undefined')?'laptops':parmas.productName;
     const Contextarr=useContext(ContextArr)
     
     const [productList,setProductList]=useState([{}]);
@@ -15,7 +16,6 @@ function Products() {
     useEffect(()=>
     {
         const FetchData=async()=>{
-
         const res= await getProductListData(`https://ecommerce-app-api-1.herokuapp.com/${ProductType}`)
         setProductList(res)
         Contextarr[1]({...Contextarr[0],productType:ProductType});
@@ -25,15 +25,14 @@ function Products() {
        FetchData();
     
     },[ProductType]);
-
-    const  newProductType=(typeof(productType)=='undefined')?'laptops':productType;
+    
 
     return ( 
         <>
         {
-            loading ?<> </> :
+            loading ? <Spinner/> :
             <div className='home-container'>
-                <p className='main-title'> {newProductType }</p>
+                <p className='main-title'> {ProductType }</p>
                 <div className='product-container'>
                     <ProductStruct props={productList} />
                 </div>
