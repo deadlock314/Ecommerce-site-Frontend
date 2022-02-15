@@ -28,15 +28,22 @@ function AuthNav(prop) {
             
 
     }
+    
+    const userUrl=(Contextarr[0].isUserLoggedIn)?`/user/${Contextarr[0].userData.userAccData.userId}`:'/';
 
     return ( 
         <>
         {
             (Contextarr[0].isUserLoggedIn )
             ?
+            <>
+            <div className='login-logout'>
+            < Link to={userUrl}>{Contextarr[0].userData.userAccData.name}</Link>
+            </div>
             <div className='login-logout' onClick={clickLogoutHandler}>
             <p id='nav-logout'>LogOut</p>
-            </div>    
+            </div>
+            </>   
             :
             <div className='login-logout'>
             < Link to='/login'>LogIn</Link>
