@@ -31,11 +31,11 @@ useEffect(()=>{
           cartState.map(( cartProduct )=>{
             return(
               <div key={cartProduct._id}>
-              { <>
+              { <div id='main-cart-component'>
                   <CartProductStruct props={cartProduct}  />
                   <ProductCounter props={cartProduct}/>
                   <button id='cart-del-btn' className={cartProduct.price} name={cartProduct._id} onClick={CartDelClickHandler}>Delete</button>
-               </>
+               </div>
                                 
               }
               </div>
@@ -47,7 +47,7 @@ useEffect(()=>{
           <div id='calc'>    
      
             <p className='calc-value'>Total Amount  ₹{Contextarr[0].priceObj}</p>
-            <button id='buypage-button' onClick={()=>redirect('/buyingpage/morethanonep')}>Buy Now</button>
+            <button id='buypage-btn' onClick={()=>redirect('/buyingpage/morethanonep')}>Buy Now</button>
             
           </div> 
 

@@ -1,25 +1,26 @@
-.cart-product-struct{
+#main-cart-component{
     display: grid;
-    grid-template-columns: 130px 50vw;
-  
-    grid-gap: 0px 50px;
+    grid-template-columns: 60% 25% 15%;
+}
+
+.cart-product-struct{
+    display: flex;
+   
 }
 
 #cart-product-image{
 display: inline-block;
     width: 150px;
     height: 140px;
-   margin: 20px 20px 10px 10px;
+   margin: 20px 20px 15px 20px;
    
 }
-#cart-container{
-     display: inline-block;
-}
+
 
 #cart-product-des{
     display: inline-block;
     margin: 20px 0px 10px 0px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 #cart-product-price{
     font-size: 1.6rem;
@@ -27,16 +28,23 @@ display: inline-block;
     margin-left: 19px;
     
 }
-#cart-del-button{
+#cart-del-btn ,#buypage-btn{
     all: unset;
     cursor: pointer;
     text-align: center;
     background-color:#ff6701 ;
-    width: 35px;
-    height: 25px;
     display: inline-block;
     color: black;
+    padding: 5px 15px;
+    height: 25px;
     font-size: 1.2rem;
+    border-radius: 7px;
+}
+#cart-del-btn{
+    margin: 63px 5vw 0 0px;
+}
+#buypage-btn{
+    margin: 15px 40px 25px  ;
 }
 
 #calc{
@@ -45,4 +53,8 @@ display: inline-block;
 }
 .calc-value{
     font-size: 1.6rem;
+}
+#cart-del-btn:hover,#buypage-btn:hover{
+    color:blue;
+    opacity: 1;
 }

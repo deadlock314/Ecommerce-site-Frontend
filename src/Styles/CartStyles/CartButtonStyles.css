@@ -3,19 +3,28 @@
     cursor: pointer;
     text-align: center;
     background-color:#ff6701 ;
-    width: 35px;
-    height: 25px;
+    padding: 3px 15px;
     display: inline-block;
+    height: 25px;
+    width: 30px;
     color: black;
     font-size: 1.2rem;
+    margin-top: 58px;
+    border-radius: 10px;
+    font-weight: bolder;
 }
 .count-value{
      display: inline-block;
      margin: 0px 7px 0px 7px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    margin-top: 60px;
 }
 #count-container{
     display: flex;
     margin: 7px 35px;
     
+}
+.count-button:hover{
+    color:#6ab317;
+    opacity: 1;
 }
