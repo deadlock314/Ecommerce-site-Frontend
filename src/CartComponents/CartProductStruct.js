@@ -4,18 +4,8 @@ import '../Styles/CartStyles/CartPS.css'
 
 function CartProductStruct(prop) {
     
-    
 
     const CartDelClickHandler=(e)=>{
-        // const NJsonprevCartData=JSON.parse(ContextObj.prevCartData);
-    //    ContextObj.prevCartData=JSON.stringify(
-    //        NJsonprevCartData.filter((doc)=>{
-    //        return doc.productId !=e.target.name;
-    //    })
-    //    )   
-    //    console.warn(NJsonprevCartData.filter((doc)=>{
-    //     return doc.productId !=e.target.name;}))
-    // console.warn(ContextObj ,';')
 
     }
     return ( 
