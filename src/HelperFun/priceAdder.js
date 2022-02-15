@@ -1,7 +1,8 @@
 
-export const priceAdder=(p1,p2,mode)=>{
+export const priceAdder=(p1,p2,mode,frequen)=>{
 
 const val=(mode=='sub')?-1:1;
+const countVal=(typeof(frequen)=='undefined')?1:frequen;
 
    if(typeof(p2)=='undefined')
    return p1;
@@ -16,8 +17,8 @@ const val=(mode=='sub')?-1:1;
     }
     
     let priceStr;
-    priceStr=filterComma(strP1)+filterComma(strP2.substring(1))*val;
-
+    priceStr=filterComma(strP1)+filterComma(strP2.substring(1))*val*countVal;
+console.warn(priceStr,typeof(frequen));
     return priceStr;
    }
    

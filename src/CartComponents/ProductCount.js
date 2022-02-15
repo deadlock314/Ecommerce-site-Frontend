@@ -12,7 +12,7 @@ function ProductCounter(prop) {
     const [count,setCount]=React.useState(Contextarr[0].countObj[id]);
         const incHandler=()=>{
             setCount((prevCount)=>prevCount+1);
-            Contextarr[1]({...Contextarr[0],countObj:{[id]:count},priceObj:priceAdder(Contextarr[0].priceObj,productPrice,'add')})
+            Contextarr[1]({...Contextarr[0],countObj:{[id]:count},priceObj:priceAdder(Contextarr[0].priceObj,productPrice,'add',1)})
         }
 
         const decHandler=()=>{    
@@ -20,7 +20,7 @@ function ProductCounter(prop) {
         setCount(1);
         else{
             setCount((prevCount)=>prevCount-1)
-            Contextarr[1]({...Contextarr[0],countObj:{[id]:count},priceObj:priceAdder(Contextarr[0].priceObj,productPrice,'sub')})
+            Contextarr[1]({...Contextarr[0],countObj:{[id]:count},priceObj:priceAdder(Contextarr[0].priceObj,productPrice,'sub',1)})
         }
     }
 

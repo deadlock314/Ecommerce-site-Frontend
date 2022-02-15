@@ -4,7 +4,7 @@ import {ContextArr} from '../HelperFun/Context';
 
 const UserProfile=()=> {
     const contextarr=useContext(ContextArr)
-    const [profile,setProfile]=useState(contextarr[0].userData.userAccData);
+    const [profile,setProfile]=useState( contextarr[0].userData.userAccData );
 
 
     return ( 
