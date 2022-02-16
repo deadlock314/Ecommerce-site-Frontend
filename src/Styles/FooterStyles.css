@@ -65,5 +65,15 @@
 
 }
 
+@media (max-width:500px) {
+    .footer-col{
+        grid-template-columns: 50% 50%;
+    }
+    .footer-subtitle{
+        font-size: 1.1rem;
+    }
+    
+}
+
 
 

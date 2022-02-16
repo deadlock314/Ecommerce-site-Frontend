@@ -28,3 +28,24 @@
     color:#6ab317;
     opacity: 1;
 }
+
+@media (max-width:500px) {
+
+    .count-button{
+         margin: 0;
+    }
+    #count-container{
+        display: inline;
+        margin: 0 0 0 10%;
+    }
+    .count-value{
+        margin: 0;
+    }
+    .count-button{
+        display: inline-block;
+        width: 2vw;
+        margin-top: 0px;
+    }
+
+    
+}

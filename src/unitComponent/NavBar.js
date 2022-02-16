@@ -27,7 +27,8 @@ const NavBar=()=>{
                         </Link></div>
                         <div className='cart'>
                         < Link to='/cart'>
-                        <i className='fa fa-shopping-cart'> cart</i>
+                        <i className='fa fa-shopping-cart'></i>
+                        <p>cart</p>
                         </Link>
                         </div>
                                

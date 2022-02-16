@@ -42,6 +42,7 @@ useEffect(()=>{
         ); 
         })
        }
+       <br/>
        <hr/>
 
           <div id='calc'>    

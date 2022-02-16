@@ -14,10 +14,10 @@ redirect(`/cart/${e.target.name}`);
     }
 
     return (  
-        <>
+        <div id='pinfo-btn'>
         <button className='productInfo-button' name={props.prop.productId} onClick={BuyNowHandlerWithSingleP} >Buy Now</button>
         <button className='productInfo-button' name={props.prop.productId} onClick={AddToCartHandler}>Add to Cart</button>
-        </>
+        </div>
     );
 }
 
