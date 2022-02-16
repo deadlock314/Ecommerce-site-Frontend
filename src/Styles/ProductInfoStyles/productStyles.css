@@ -24,9 +24,9 @@
 .product-struct{
     display: inline-block;
     background-color: var(--bgcolor);
-    width: 335px;
+    width: 305px;
     height: 350px;
-    margin-bottom: 42px;
+    margin-bottom: 30px;
     cursor: pointer;
 }
 
@@ -57,8 +57,8 @@
 {
     display: inline-block;
     height: 200px;
-    width: 310px;
-    padding: 20px 20px 10px 40px;
+    width: 300px;
+    padding: 20px 20px 10px 30px;
 }
 #product-des{
     padding: 5px 10px 0px 24px;
@@ -71,9 +71,20 @@
 
 }
 #product-price{
-    padding:10px 10px 0px 40px;
+    padding:5px 10px 0px 40px;
     font-family:  Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     color: #212121;
+}
+
+@media (max-width:500px) {
+    .home-container{
+        margin: 0 20px 0 20px;
+       
+    }
+    .main-title{
+        font-size: 1.4rem;
+    }
+    
 }

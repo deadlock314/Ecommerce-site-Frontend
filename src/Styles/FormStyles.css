@@ -2,13 +2,12 @@
     display: flex;
     align-self: center;
     justify-content: center;
-    margin: 22vh 0 22vh 0;
+    margin: 20vh 0 20vh 0;
     
 }
-
 .form{
     display: grid;
-    background-color: var(--bgcolor);
+    background-color:#fff;
     padding: 20px;
     width: 380px;
     height: 320px;
@@ -19,13 +18,13 @@
     cursor: pointer;
     text-align: center;
     background-color: #ff6701;
-    width: 245px;
+    width: 220px;
     height: 28px;
-    margin: 8px 0 8px 50px;
+    margin: 8px 0 10px 68px;
     border: 1px solid #ff6701;
-    border-radius: 5px;
+    border-radius: 15px;
     color:#fff;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     
 }
 .form label{
@@ -37,18 +36,48 @@
     
 }
 .form input{
+     all: unset;
     display: inline-block;
     width: 245px;
-    height: 26px;
+    height: 28px;
     margin: 3px 0 0 50px;
+    border:  solid 2px black;
+    border-radius: 10px;
 }
 #fpass{
-    font-size: 1rem;
+    font-size: 1.05rem;
    padding-left: 75px;
     color: blue;
 }
 .form p{
     padding-left: 50px;
 }
+@media (max-width:500px) {
 
+    .form{
+        width: 90vw;
+        height: 95vw;
+    }
+    .form input{
+        width:70vw;
+        height: 28px;
+        
+        margin: 2px 15px;
+
+    }
+    .form label{
+        padding: 0 20px;
+    }
+    #fpass{
+        font-size: 1.05rem;
+       padding-left: 45px;
+    }
+    .form button{
+        margin-left: 26px;
+    }
+    .form p{
+        padding-left: 10px;
+    }
+  
+}
 

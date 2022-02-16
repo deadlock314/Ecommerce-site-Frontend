@@ -75,7 +75,7 @@ font-size: 1.45vw;
    ;
 }
 .cart{
-   padding-left:20vw;
+   padding-left:16vw;
 }
 .login-logout{
 
@@ -89,6 +89,9 @@ font-size: 1.45vw;
  .cart a p{
      font-size: 0;
     
+ }
+ #nav-logout{
+      font-size: 5vw;
  }
 
 

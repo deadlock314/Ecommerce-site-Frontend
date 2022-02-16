@@ -64,19 +64,27 @@ margin: 7% 0px 20px 40vw;
 @media (max-width:500px) {
     .productInfoProps-struct{
          display: inline;
+         background-color: white;
+         margin: 2px 0;
+         padding: 2px 0;
+         
     }
     .productInfo-left-container{
         position: relative;
+        background-color: white; 
+        margin: 12px 9px 0 9px ;
+        padding: 10px 15px;
        
     }
     .productInfo-right-container{
-        margin: 0px ;
+        margin: 0 9px;
+        background-color: white;
         }
 
         .productInfo-image{
-            height: 60vw;
-            width: 75vw;
-            margin-left: 7vw;
+            height: 70vw;
+            width: 85vw;
+            margin-left: 2vw;
         }
         #productInfo-mobiles{
             height: 75vw;
@@ -85,18 +93,24 @@ margin: 7% 0px 20px 40vw;
             height: 70vw;
         }
         .productInfo-button{
-            font-size: 1rem;
+            font-size: 0.97rem;
             width: 22vw;
             height: 7vw;
             margin-top: 15px;
+            padding: 2px 7px;
         }
         #pinfo-btn{
-            margin-left: 13vw;
+            margin-left: 8vw;
         }
         #productInfo-des{
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-left: 10px;
            }
+        
+        #productInfo-price{
+        margin: -5px 50px 0px 50vw;
+        font-size: 1.6rem;
+     }
 
     
 }

@@ -84,9 +84,10 @@ display: inline-block;
             grid-template-columns: 100%;
         }
         #cart-product-price{
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             display: inline;
-            margin-left: 30vw;
+            margin-left: 17vw;
+            font-weight: 900;
             
         }
         #calc{
