@@ -43,9 +43,12 @@ function AuthNav(prop) {
             <div className='login-logout' onClick={clickLogoutHandler}>
             <p id='nav-logout'>LogOut</p>
             </div>
+            <div className='nav-user-icon'>
+            < Link to={userUrl}><i className="fa fa-user-circle"></i> </Link>
+            </div>
             </>   
             :
-            <div className='login-logout'>
+            <div className='login'>
             < Link to='/login'>LogIn</Link>
             </div>
         }

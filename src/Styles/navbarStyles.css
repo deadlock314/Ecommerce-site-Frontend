@@ -35,14 +35,14 @@
    
 }
 
-.login-logout a,#nav-logout{
+.login-logout a, .login a, #nav-logout{
  font-size: 1.7vw;
  color: white;
 
 
 }
 
-.login-logout a:hover , .home-purl a:hover ,#nav-logout:hover{
+.login-logout a:hover,.login a:hover , .home-purl a:hover ,#nav-logout:hover{
     color:var(--hovercolor);
     opacity: 1;
    
@@ -70,20 +70,19 @@ font-size: 1.45vw;
     font-size:4vw ;
    
 }
-.login-logout a {
-    font-size: 5vw; 
-   ;
-}
-.cart{
-   padding-left:16vw;
-}
-.login-logout{
 
-    padding-right: 1vw;
+.cart{
+   padding-left:24vw;
+   margin-top: -1vw;
+}
+.login a{
+    font-size: 6vw;
+    padding-right: 3vw;
+    
   }  
 
   .cart a{
-      font-size: 6vw;
+      font-size: 7vw;
      
     }
  .cart a p{
@@ -91,9 +90,22 @@ font-size: 1.45vw;
     
  }
  #nav-logout{
-      font-size: 5vw;
+      font-size: 0;
  }
+ .login-logout a{
+    font-size: 0;
+}
 
+.nav-user-icon a { 
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 8vw;
+     color: white;
+     margin-right: 10px;
+}
+.nav-user-icon{
+    margin-top: -1vw;
+}
 
 }
 

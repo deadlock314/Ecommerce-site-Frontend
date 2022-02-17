@@ -84,7 +84,7 @@ margin: 7% 0px 20px 40vw;
         .productInfo-image{
             height: 70vw;
             width: 85vw;
-            margin-left: 2vw;
+            margin-left: 1vw;
         }
         #productInfo-mobiles{
             height: 75vw;
@@ -93,10 +93,10 @@ margin: 7% 0px 20px 40vw;
             height: 70vw;
         }
         .productInfo-button{
-            font-size: 0.97rem;
-            width: 22vw;
-            height: 7vw;
-            margin-top: 15px;
+            font-size: 5vw;
+            width: 24vw;
+            height: 9vw;
+            margin: 15px 15px 5px 13px;
             padding: 2px 7px;
         }
         #pinfo-btn{
@@ -108,7 +108,7 @@ margin: 7% 0px 20px 40vw;
            }
         
         #productInfo-price{
-        margin: -5px 50px 0px 50vw;
+        margin: 5px 50px 0px 50vw;
         font-size: 1.6rem;
      }
 
