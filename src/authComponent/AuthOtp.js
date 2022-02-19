@@ -33,16 +33,17 @@ function AuthOtp() {
 }
 
     return ( 
-    <>
+    <div className='auth-wrapper'>
     <form className="form">
-        <label htmlFor='localOtp'>Email verification OTP </label>
+        <label htmlFor='localOtp' id='auth-otp-label'>Email verification OTP </label>
         <input name='otp' type='text' value={localOtp} onChange={changeHandler} />
         <button type="submit" onClick={VerifySignup} >Verify User</button>
-    </form>
-    <p>We just send your OTP via your email {urlData.state.email} </p>
+    <p id='auth-otp-para'>We just send your OTP via your <br/>email <span id='auth-otp-email'>{ (urlData.state)?urlData.state.email:''}</span> </p>
     <p>The code will expire soon so Hurry up..</p>
-    <button >Resend OTP</button>
-    </> );
+    <button id='auth-otp-resend-btn' >Resend OTP</button>
+    </form>
+   
+    </div> );
 
 }
 export default AuthOtp;
