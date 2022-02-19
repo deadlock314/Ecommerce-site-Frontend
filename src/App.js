@@ -11,6 +11,7 @@ import UserProfile from "./UserProfileComponent/UserProfile";
 import Footer from './unitComponent/Footer';
 import './Styles/globalStyles.css';
 import {GlobalContext} from './HelperFun/Context';
+import AuthOtp from './authComponent/AuthOtp';
 
 function App() {
  
@@ -26,6 +27,7 @@ function App() {
  <Route path='/products/:productName' element={<Products/>}/>
  <Route path='/login' element={<LogIn/>} />
  <Route path='/signup' element={<SignUp/>} />
+ <Route path='/signup/alphakey' element={<AuthOtp/>} />
  <Route path='/cart/:ProductId' element={<Cart/>}/>
  <Route path='/cart' element={<Cart/>}/>
  <Route path='ProductInfo/:ProductId' element={<ProductInfo/>}/>
