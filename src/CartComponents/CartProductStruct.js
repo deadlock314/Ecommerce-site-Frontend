@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../Styles/CartStyles/CartPS.css';
-//import {ContextArr} from '../HelperFun/Context';
+
 
 function CartProductStruct(prop) {
-   // const Contextarr=useContext(ContextArr)
-    
-
  
     return ( 
        
