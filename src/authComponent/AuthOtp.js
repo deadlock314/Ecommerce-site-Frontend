@@ -1,14 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router';
-import { useState } from 'react/cjs/react.development';
+
 
 function AuthOtp() {
 
     const urlData=useLocation();
-    if(!(urlData.state.email))
-    urlData.state={};
-
     const redirect=useNavigate()
     const [localOtp,setLocalOtp]=useState('');
 
@@ -41,7 +38,7 @@ function AuthOtp() {
         <label htmlFor='localOtp' id='auth-otp-label'>Email verification OTP </label>
         <input name='otp' type='text' value={localOtp} onChange={changeHandler} />
         <button type="submit" onClick={VerifySignup} >Verify User</button>
-    <p id='auth-otp-para'>We just send your OTP via your <br/>email <span id='auth-otp-email'>{ (urlData.state)?urlData.state.email:''}</span> </p>
+    <p id='auth-otp-para'>We just send your OTP via your <br/>email <span id='auth-otp-email'>{ ( urlData.state)?urlData.state.email:''}</span> </p>
     <p id='auth-otp-para2'>The code will expire soon so Hurry up..</p>
     <button id='auth-otp-resend-btn' >Resend OTP</button>
     </form>
