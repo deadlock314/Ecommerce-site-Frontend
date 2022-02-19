@@ -81,6 +81,7 @@ margin-left: 20px;
     }
     .form label{
         padding: 0 20px;
+       
     }
     #fpass{
         font-size: 1.05rem;
@@ -88,9 +89,12 @@ margin-left: 20px;
     }
     .form button{
         margin-left: 34px;
+        width:70vw; 
+        height: 30px;
+        margin: 5px 15px;
     }
     .form p{
-        padding-left: 40px;
+        padding-left: 5vw;
     }
     #auth-otp-label{
         margin: 0 0 15px 25px;
@@ -98,9 +102,6 @@ margin-left: 20px;
         }
     #auth-otp-para{
             margin: 10px  0 0 0;
-        }
-  #auth-otp-para2{
-            margin-left: -20px;
         }
 }
 

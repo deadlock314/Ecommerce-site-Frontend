@@ -94,13 +94,13 @@ margin: 7% 0px 20px 40vw;
         }
         .productInfo-button{
             font-size: 5vw;
-            width: 24vw;
+            width: 26vw;
             height: 9vw;
-            margin: 15px 15px 5px 13px;
+            margin: 15px 15px 5px 10px;
             padding: 2px 7px;
         }
         #pinfo-btn{
-            margin-left: 8vw;
+            margin-left: 6vw;
         }
         #productInfo-des{
             font-size: 1.25rem;
