@@ -6,6 +6,9 @@ import { useState } from 'react/cjs/react.development';
 function AuthOtp() {
 
     const urlData=useLocation();
+    if(!(urlData.state.email))
+    urlData.state={};
+
     const redirect=useNavigate()
     const [localOtp,setLocalOtp]=useState('');
 
