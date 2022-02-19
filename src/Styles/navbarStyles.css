@@ -72,12 +72,12 @@ font-size: 1.45vw;
 }
 
 .cart{
-   padding-left:20vw;
+   padding-left:18vw;
    margin-top: -1vw;
 }
 .login a{
     font-size: 6vw;
-    padding-right: 1vw;
+    padding-right: 0;
     
   }  
 
