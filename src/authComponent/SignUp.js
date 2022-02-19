@@ -34,7 +34,7 @@ function SignUp() {
     return (
         <div className='auth-wrapper'> 
         <form className="form">
-            <label htmlFor="name" >Name : </label><br />
+            <label htmlFor="name" >Name : </label>
             <input type='text' name='name' id='name' value={user.name} onChange={changeHandler} />
             <label htmlFor="email" >Email : </label>
             <input type="email" name="email" id='email' value={user.email} onChange={changeHandler}/>  

@@ -61,7 +61,7 @@ import Spinner from '../unitComponent/Spinner';
                 <input type="email" name="email" id='email' value={user.email} onChange={changeHandler}/>  
                 <label htmlFor="password" > Password : </label>
                 <input type='password' name="password" id='password' value={user.password}  onChange={changeHandler}/>
-                <Link id='fpass' to='/forgotpassword'>forgot your password</Link> 
+                <Link id='fpass' to='/forgotpassword'>Forgot your password</Link> 
                 <button type='submit' onClick={clickHandler}>LogIn</button>
                 <p>Didn't have any account ?<Link className='auth-link' to='/signup'> Sign Up</Link></p>
                 <p>Right Now and enjoy your shoping ... </p>

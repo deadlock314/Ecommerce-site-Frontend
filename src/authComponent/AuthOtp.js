@@ -39,7 +39,7 @@ function AuthOtp() {
         <input name='otp' type='text' value={localOtp} onChange={changeHandler} />
         <button type="submit" onClick={VerifySignup} >Verify User</button>
     <p id='auth-otp-para'>We just send your OTP via your <br/>email <span id='auth-otp-email'>{ (urlData.state)?urlData.state.email:''}</span> </p>
-    <p>The code will expire soon so Hurry up..</p>
+    <p id='auth-otp-para2'>The code will expire soon so Hurry up..</p>
     <button id='auth-otp-resend-btn' >Resend OTP</button>
     </form>
    

@@ -70,13 +70,13 @@ margin-left: 20px;
 
     .form{
         width: 90vw;
-        height: 95vw;
+        height: 90vw;
     }
     .form input{
         width:70vw;
         height: 28px;
         
-        margin: 2px 15px;
+        margin: 5px 15px;
 
     }
     .form label{
@@ -87,15 +87,20 @@ margin-left: 20px;
        padding-left: 45px;
     }
     .form button{
-        margin-left: 16px;
+        margin-left: 34px;
     }
     .form p{
-        padding-left: 10px;
+        padding-left: 40px;
     }
     #auth-otp-label{
-        margin: 0 0 15px 8px;
+        margin: 0 0 15px 25px;
         font-size: 1.3rem;
         }
-  
+    #auth-otp-para{
+            margin: 10px  0 0 0;
+        }
+  #auth-otp-para2{
+            margin-left: -20px;
+        }
 }
 
