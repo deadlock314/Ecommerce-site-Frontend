@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter,Routes ,Route} from 'react-router-dom';
 import NavBar from './unitComponent/NavBar';
 import LogIn from './authComponent/LogIn';
@@ -10,15 +10,13 @@ import BuyingPage from './BuyingPageComponent/BuyingPage';
 import UserProfile from "./UserProfileComponent/UserProfile";
 import Footer from './unitComponent/Footer';
 import './Styles/globalStyles.css';
-import {GlobalContext} from './HelperFun/Context';
+import {GlobalContext,ContextArr} from './HelperFun/Context';
 import AuthOtp from './authComponent/AuthOtp';
 
 function App() {
- 
-  
   
   return (
-<GlobalContext>
+
 <>
 <BrowserRouter>
  <NavBar/> 
@@ -38,7 +36,7 @@ function App() {
  <Footer/>
  </BrowserRouter>
 </>
-</GlobalContext>
+
  
 
   )

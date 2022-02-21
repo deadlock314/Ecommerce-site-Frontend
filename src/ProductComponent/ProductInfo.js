@@ -18,7 +18,8 @@ const [loading ,setLoading]=useState(true);
 useEffect(()=>
 {
      const FetchData=async()=>{
-    const res= await getProductInfoData(param,Contextarr[0].productType)
+    const res= await getProductInfoData(param,Contextarr[0].productType||JSON.parse(localStorage.getItem('productType')));
+    sessionStorage.setItem('productType',Contextarr[0].productType)
     setProductInfo(res)
     setLoading(false)
 
@@ -26,8 +27,6 @@ useEffect(()=>
    FetchData();
 
 },[]);
-
-
 
 
     return ( 
