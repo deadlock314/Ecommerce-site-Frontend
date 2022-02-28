@@ -3,12 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const ProductTypeSlice =createSlice({
 
-    name:'ProductType',
+    name:'productType',
     initialState:{
         value:'laptops'
     },
     reducers:{
-        changeProductType:(state,action) => {return {...state,value:action.value}}
+        changeProductType:(state,action) => {return {value:action.value}}
     }
 
 });

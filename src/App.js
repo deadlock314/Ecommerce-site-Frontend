@@ -27,7 +27,7 @@ function App() {
  <Route path='/signup/alphakey' element={<AuthOtp/>} />
  <Route path='/cart/:ProductId' element={<Cart/>}/>
  <Route path='/cart' element={<Cart/>}/>
- <Route path='ProductInfo/:ProductId' element={<ProductInfo/>}/>
+ <Route path='ProductInfo/:ProductType/:ProductId' element={<ProductInfo/>}/>
  <Route path='buyingpage/:ProductId' element={<BuyingPage/>}/>
  <Route path='buyingpage/:ProductId' element={<BuyingPage/>}/>
  <Route path='user/:userId' element={<UserProfile/>}/>

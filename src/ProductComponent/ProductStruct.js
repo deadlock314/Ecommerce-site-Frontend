@@ -2,23 +2,23 @@ import React from 'react';
 import '../Styles/ProductInfoStyles/productStyles.css';
 import { useNavigate } from 'react-router';
 
-function ProductStruct(productList) {
-
+function ProductStruct(prop) {
+ console.log(prop)
     const redirect=useNavigate();
     const ProductInfoFetch=(e)=>{
         (typeof(e.target.name) == undefined ||e.target.name== undefined) ?
-            redirect('/') :redirect(`/ProductInfo/${e.target.name}`)
+            redirect('/') :redirect(`/ProductInfo/${prop.props.ProductType}/${e.target.name}`)
 
     }
   
     return( 
     <>
     {
-    productList.props.map((product)=>{
+    prop.props.productList.map((product)=>{
 
     return(
         
-            <div className="product-struct" id={`product-struct-`} key={product.productId} onClick={ProductInfoFetch} >
+            <div className="product-struct" id={`product-struct-${prop.props.ProductType}`} key={product._id+`11`} onClick={ProductInfoFetch} >
                 <div>
                     <img className='product-image' src={product.imgLink}  name={product.productId} alt={product.name}/>
                     <p id='product-des'> {product.des}</p>
@@ -27,12 +27,14 @@ function ProductStruct(productList) {
                 
             </div>
         );
-    })      
+    })
+        
  
     }
-    </>  
+    </>
 
     );
+  
 }
 
 export default ProductStruct;

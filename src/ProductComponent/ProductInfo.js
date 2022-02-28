@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 const ProductInfo=()=> {
     
 const param=useParams();
-const ProductType=useSelector((state)=>state.productType.value);
+const ProductType= param.ProductType|| useSelector((state)=>state.productType.value);
 
 const [ productInfo,setProductInfo]=useState();
 const [loading ,setLoading]=useState(true);
