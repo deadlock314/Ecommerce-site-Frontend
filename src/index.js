@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './App';
-import {GlobalContext} from'./HelperFun/Context';
+import store from './ReduxCode/Store';
+
 ReactDOM.render(
   <React.StrictMode>
-  <GlobalContext>
+  <Provider store={store}>
     <App/> 
-  </GlobalContext>
+  </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,40 +1,43 @@
 import axios from 'axios';
-import React,{useContext} from 'react';
+import React from 'react';
+import { useSelector,useDispatch } from 'react-redux';
 import { Link,useNavigate } from 'react-router-dom';
+import {changeUserAuth} from '../ReduxCode/Reducers';
 
-import {ContextArr} from '../HelperFun/Context';
-function AuthNav(prop) {
+function AuthNav(){
+    
+    const redirect=useNavigate();
 
-    const Contextarr=useContext(ContextArr);
-    const redirect=useNavigate()
+    const UserAuthObj=useSelector((state)=>state.userAuth);
+    console.log(UserAuthObj);
+    const dispatch=useDispatch();
+
     const clickLogoutHandler=(e)=>{
         e.preventDefault()
         axios.post('https://ecommerce-app-api-1.herokuapp.com/logout',{},{withCredentials: true
         }).then((res)=>{
                 if(res.data.isUserLoggedOut){
-                    alert('user succesfully Logged-out') 
-                     
-                    Contextarr[1]({...Contextarr[0],isUserLoggedIn: !(res.data.isUserLoggedOut)});
+                    alert('user succesfully Logged-out')  
+                    useDispatch(changeUserAuth(false))
                     redirect('/') 
-                    
                 }
-                else{
+                else
                     alert('something went wrong try again');
-                }
+
             }).catch((err)=>{
                     alert('something went wrong try again');
                     console.warn(err)
-            })
+                })
             
 
     }
     
-    const userUrl=(Contextarr[0].isUserLoggedIn)?`/user/${Contextarr[0].userData.userAccData.userId}`:'/';
+    const userUrl= UserAuthObj.value ? `/user/${UserAuthObj.userData.userAccData._Id}` : '/' ;
 
     return ( 
         <>
         {
-            (Contextarr[0].isUserLoggedIn )
+            (UserAuthObj.value)
             ?
             <>
             <div className='login-logout'>

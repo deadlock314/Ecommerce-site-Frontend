@@ -1,21 +1,13 @@
-import React, { useContext } from 'react';
+import React  from 'react';
 import '../Styles/navbarStyles.css';
 import  'font-awesome/css/font-awesome.min.css';
 import {  Link } from 'react-router-dom';
-
 import AuthNav from './AuthNav';
 
-
-
 const NavBar=()=>{
-
-    
-   
-      
   
     return(
    
-                
     <header>
             <div >
             <nav id='navbar'>
