@@ -10,7 +10,6 @@ import BuyingPage from './BuyingPageComponent/BuyingPage';
 import UserProfile from "./UserProfileComponent/UserProfile";
 import Footer from './unitComponent/Footer';
 import './Styles/globalStyles.css';
-import {GlobalContext,ContextArr} from './HelperFun/Context';
 import AuthOtp from './authComponent/AuthOtp';
 
 function App() {
