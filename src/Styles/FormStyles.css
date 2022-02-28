@@ -20,9 +20,9 @@
     cursor: pointer;
     text-align: center;
     background-color: #ff6701;
-    width: 220px;
+    width: 245px;
     height: 28px;
-    margin: 8px 0 10px 68px;
+    margin: 3px 0 0 50px;
     border: 1px solid #ff6701;
     border-radius: 15px;
     color:#fff;
@@ -48,15 +48,21 @@
 }
 #fpass{
     font-size: 1.05rem;
-   padding-left: 100px;
+    padding-left: 50px;
     color: blue;
 }
+#warn-message{
+
+    font-size: 1.1rem;
+    color: rgb(241, 10, 10);
+}
+
 .form p{
     padding-left: 50px;
 }
 
 #auth-otp-label{
-margin: 0 0 20px 20px;
+margin: 0 0 0px 20px;
 font-size: 1.5rem;
 }
 #auth-otp-para{
@@ -89,8 +95,8 @@ margin-left: 20px;
     }
     .form button{
         margin-left: 34px;
-        width:70vw; 
-        height: 30px;
+        width:70vw;
+        height: 28px;
         margin: 5px 15px;
     }
     .form p{
