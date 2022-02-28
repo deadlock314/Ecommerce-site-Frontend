@@ -51,6 +51,10 @@
     padding-left: 50px;
     color: blue;
 }
+.auth-link{
+    font-size: 1.1rem;
+    color: blue;
+}
 #warn-message{
 
     font-size: 1.1rem;
