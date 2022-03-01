@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react';
+import React  from 'react';
 import CartProductStruct from './CartProductStruct';
 import ProductCounter from './ProductCount';
 import '../Styles/CartStyles/CartPS.css';

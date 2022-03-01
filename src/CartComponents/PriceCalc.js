@@ -10,7 +10,7 @@ const PriceCalc=()=> {
        <br/>
        <hr/>
             <div id='calc'>    
-            <p className='calc-value'>Total Amount₹{totalPrice}</p>
+            <p className='calc-value'>Total Amount ₹{totalPrice}</p>
             <button id='buypage-btn' onClick={()=>redirect('/buyingpage/morethanonep')}>Buy Now</button>
           </div>
         </>
