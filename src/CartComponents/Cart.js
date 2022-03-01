@@ -11,20 +11,22 @@ import { priceAdder } from '../HelperFun/priceAdder';
 const Cart=()=> {
 
 const param=useParams();
+let loading=false;
 const cartData=useSelector(state=> state.cartData);
-const ProductType= param.ProductType || useSelector((state)=>state.productType.value);
-const dispatch=useDispatch();
-
-const [loading ,setLoading]=useState(true);
-
-const checkForDuplicate=()=>{
-   for (let i = 0; i < cartData.prevCartData.length; i++)
-      if(cartData.prevCartData[i].productId==param.ProductId){
-         setLoading(false);
-         return false;
-      } 
-      return true;
-   }
+if(param.ProductId)
+{
+     
+     const ProductType= param.ProductType || useSelector((state)=>state.productType.value);
+     const dispatch=useDispatch();
+     let [loading ,setLoading]=useState(false);
+     const checkForDuplicate=()=>{
+         for (let i = 0; i < cartData.prevCartData.length; i++)
+           if(cartData.prevCartData[i].productId==param.ProductId){
+           setLoading(false);
+           return false;
+           } 
+          return true;
+    }
 
    useEffect(()=>{
       (async()=>{
@@ -41,12 +43,17 @@ const checkForDuplicate=()=>{
          setLoading(false)
       }    
       })();
-   },[param.ProductId]);
+   },[param.ProductId]); 
+}
+else{
+    loading=false;
+}
+    
 
    return (
    <>
       {
-     loading ? <Spinner/>  : (param.ProductId==undefined && cartData.prevCartData.length<=0 )?<EmptyCart/> : <CartWithProduct />
+      (param.ProductId==undefined && cartData.prevCartData.length<=0 )?<EmptyCart/> : loading ? <Spinner/>  : <CartWithProduct />
       }
    </>
    )
