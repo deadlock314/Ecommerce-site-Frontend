@@ -1,29 +1,30 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import CartProductStruct from './CartProductStruct';
 import ProductCounter from './ProductCount';
 import '../Styles/CartStyles/CartPS.css';
-import { useNavigate } from 'react-router';
-import {ContextArr} from '../HelperFun/Context';
+import { useDispatch, useSelector } from 'react-redux';
+import { updatePrice, removeCartData } from '../ReduxCode/Reducers';
+import PriceCalc from './PriceCalc';
 import { priceAdder } from '../HelperFun/priceAdder';
 
-function CartWithProduct(prop) {
-  
-const redirect=useNavigate();
-const Contextarr=useContext(ContextArr);
-const [cartState ,setCartState]= useState(Contextarr[0].prevCartData);
+const CartWithProduct=()=>{
+
+const cartData=useSelector((state)=>state.cartData);
+const dispatch=useDispatch()
+
+const cartState=cartData.prevCartData || [];
 
 const CartDelClickHandler=(e)=>{
   e.preventDefault();
-  Contextarr[1]({...Contextarr[0],  prevCartData:Contextarr[0].prevCartData.filter((el=> el._id != e.target.name))
-   , priceObj:priceAdder( Contextarr[0].priceObj,e.target.className,'sub',Contextarr[0].countObj[e.target.name]+(Contextarr[0].countObj[e.target.name]==1?0:1) ) 
-});
+  const id =e.target.name;
+     
+        dispatch(removeCartData(id));
+        dispatch(updatePrice({ countObj:{id,count:1},
+        totalPrice:priceAdder(cartData.totalPrice,e.target.className,'sub',cartData.countObj.id||1)
+        }))    
+ 
 };
 
-
-
-useEffect(()=>{
- setCartState(Contextarr[0].prevCartData); 
-},[Contextarr[0].prevCartData])
 
     return ( 
       <>
@@ -31,29 +32,20 @@ useEffect(()=>{
           cartState.map(( cartProduct )=>{
             return(
               <div key={cartProduct._id}>
-              { <div id='main-cart-component'>
+              { (cartProduct.imgLink)? 
+                <div id='main-cart-component'>
                   <CartProductStruct props={cartProduct}  />
                   <ProductCounter props={cartProduct}/>
-                  <button id='cart-del-btn' className={cartProduct.price} name={cartProduct._id} onClick={CartDelClickHandler}>Delete</button>
-               </div>
-                                
-              }
-              </div>
-        ); 
+                  <button id='cart-del-btn' className={cartProduct.price} name={cartProduct._id} onClick={CartDelClickHandler}>Remove</button>
+                </div>
+                                    :<></>                 
+              }</div>
+            ); 
         })
-       }
-       <br/>
-       <hr/>
-
-          <div id='calc'>    
-     
-            <p className='calc-value'>Total Amount  ₹{Contextarr[0].priceObj}</p>
-            <button id='buypage-btn' onClick={()=>redirect('/buyingpage/morethanonep')}>Buy Now</button>
-            
-          </div> 
-
-        </>
-        );
+       } 
+           <PriceCalc/>
+      </>
+  );
 }
 
 export default CartWithProduct;
