@@ -9,13 +9,13 @@ const CartProductStruct=(prop)=> {
     const redirect=useNavigate();
     const ProductType=useSelector(s=>s.productType.value);
 
-    const clickProductStructHandler=(e)=> redirect(`/ProductInfo/${ProductType}/${e.target.name}`)
+    const clickProductStructHandler=(e)=> {console.log(e.target.name); redirect(`/ProductInfo/${ProductType}/${prop.props.productId}`)}
 
     return ( 
        
-        <>
+        <div >
    
-            < div className="cart-product-struct" key={prop.props._id}  onClick={clickProductStructHandler}>
+            <div className="cart-product-struct" key={prop.props._id} onClick={clickProductStructHandler}>
                <img id='cart-product-image' src={prop.props.imgLink} name={prop.props.productId} alt={prop.props.name}/>
                <div id='cart-container'>
                <p id='cart-product-des'>   {prop.props.des}</p>
@@ -24,7 +24,7 @@ const CartProductStruct=(prop)=> {
             </div>
       
         
-        </>
+        </div>
      );
 }
 
