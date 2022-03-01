@@ -13,7 +13,7 @@ function AuthNav(){
 
     const clickLogoutHandler=(e)=>{
         e.preventDefault()
-        axios.post('https://ecommerce-app-api-1.herokuapp.com/logout',{},{withCredentials: true
+        axios.post('https://ecommerce-app-api-1.herokuapp.com/logout',{  },{withCredentials: true
         }).then((res)=>{
                 if(res.data.isUserLoggedOut){
                     alert('user succesfully Logged-out')  
