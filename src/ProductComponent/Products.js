@@ -6,7 +6,7 @@ import {getProductListData}  from '../HelperFun/getProductData';
 import Spinner from '../unitComponent/Spinner';
 import { useSelector } from 'react-redux';
 
-function Products() {
+const Products=()=> {
 
     const params=useParams();
     const ProductType= params.productName|| useSelector((state)=>state.productType.value)

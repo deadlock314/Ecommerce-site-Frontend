@@ -28,7 +28,7 @@ useEffect(()=>
 
     return ( 
     <>
-    {loading ?<Spinner/> :(<ProductInfoStruct product={ productInfo} />)}
+    {loading ?<Spinner/> :(<ProductInfoStruct product={{productInfo,ProductType}} />)}
    
    </>
    );

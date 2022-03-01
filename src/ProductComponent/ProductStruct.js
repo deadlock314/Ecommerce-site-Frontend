@@ -3,7 +3,6 @@ import '../Styles/ProductInfoStyles/productStyles.css';
 import { useNavigate } from 'react-router';
 
 function ProductStruct(prop) {
- console.log(prop)
     const redirect=useNavigate();
     const ProductInfoFetch=(e)=>{
         (typeof(e.target.name) == undefined ||e.target.name== undefined) ?

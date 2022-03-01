@@ -4,18 +4,18 @@ import CartButtons from '../unitComponent/CartButtons';
 import Ratings from './Ratings';
 import {useSelector} from 'react-redux';
 
-const PropsInfoStruct=(props)=> {
+const PropsInfoStruct=({product})=> {
  
-   const productInfoProps=props.product;
-   const  newProductType=useSelector((state)=>state.productType.value);
+   const productInfoProps=product.productInfo;
+   const  ProductType= product.ProductType||useSelector((state)=>state.productType.value);
 
    return( 
        <>
          { 
          productInfoProps  ?  <div className="productInfoProps-struct" key={productInfoProps.productId} >
                         <div className='productInfo-left-container'>
-                        <img className={`productInfo-image-${newProductType}`} id={`productInfo-${newProductType}`} src={productInfoProps.imgLink}   alt={productInfoProps.name}/>
-                        <CartButtons prop={productInfoProps}/> 
+                        <img className={`productInfo-image-${ProductType}`} id={`productInfo-${ProductType}`} src={productInfoProps.imgLink}   alt={productInfoProps.name}/>
+                        <CartButtons prop={{productInfoProps,ProductType}}/> 
                         </div>
                         <div className="productInfo-right-container">
                         <p id='productInfo-des'> {productInfoProps.des}</p>
