@@ -1,6 +1,6 @@
-import { ProductTypeSlice ,UserAuthSlice } from './Reducers';
+import { ProductTypeSlice ,UserAuthSlice,PrevCartDataSlice} from './Reducers';
 
 const ProductTypeReducer=ProductTypeSlice.reducer;
 const UserAuthReducer=UserAuthSlice.reducer;
-
-export  {ProductTypeReducer,UserAuthReducer} ;
+const CartDataReducer=PrevCartDataSlice.reducer;
+export  {ProductTypeReducer,UserAuthReducer,CartDataReducer} ;
