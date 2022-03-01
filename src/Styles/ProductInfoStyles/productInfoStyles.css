@@ -16,8 +16,6 @@
 margin: 7% 0px 20px 40vw;
 }
 
-
-
 .productInfo-ratings{
     margin: 10px 10px 10px 20px;
     font-size: 1.7rem;
@@ -50,15 +48,17 @@ margin: 7% 0px 20px 40vw;
     font-weight: 500;
     border-radius: 10%;
 }
-.productInfo-image{
+.productInfo-image-laptops{
     height: 30vw;
     width: 35vw;
 }
 #productInfo-mobiles{
     height: 40vw;
+    width: 35vw;
 }
 #productInfo-earphones{
     height: 37vw;
+    width: 35vw;
 }
 
 @media (max-width:500px) {
@@ -81,26 +81,30 @@ margin: 7% 0px 20px 40vw;
         background-color: white;
         }
 
-        .productInfo-image{
-            height: 70vw;
+        .productInfo-image-laptops{
+            height: 65vw;
             width: 85vw;
-            margin-left: 1vw;
+            margin-left: 0vw;
         }
         #productInfo-mobiles{
+            width: 82vw;
+            margin-left: 1vw;
             height: 75vw;
         }
         #productInfo-earphones{
+            width: 85vw;
+            margin-left: 1vw;
             height: 70vw;
         }
         .productInfo-button{
             font-size: 5vw;
-            width: 26vw;
+            width: 28vw;
             height: 9vw;
-            margin: 15px 15px 5px 10px;
+            margin: 15px 10px 5px 10px;
             padding: 2px 7px;
         }
         #pinfo-btn{
-            margin-left: 6vw;
+            margin-left: 3vw;
         }
         #productInfo-des{
             font-size: 1.25rem;
