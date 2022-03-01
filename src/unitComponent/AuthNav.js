@@ -9,7 +9,6 @@ function AuthNav(){
     const redirect=useNavigate();
 
     const UserAuthObj=useSelector((state)=>state.userAuth);
-    console.log(UserAuthObj);
     const dispatch=useDispatch();
 
     const clickLogoutHandler=(e)=>{
