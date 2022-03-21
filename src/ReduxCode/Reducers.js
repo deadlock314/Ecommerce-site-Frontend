@@ -1,16 +1,5 @@
 import { createSlice ,current } from '@reduxjs/toolkit';
 
-export const ProductTypeSlice =createSlice({
-    name:'productType',
-    initialState:{
-        value:'laptops'
-    },
-    reducers:{
-        changeProductType:(state,action) => {return {value:action.payload}}
-    }
-
-});
-
 export const UserAuthSlice=createSlice({
     name:'authContext',
     initialState:{
@@ -18,9 +7,12 @@ export const UserAuthSlice=createSlice({
         userData:{}
     },
     reducers:{
-        changeUserAuth:(state,action) => {return {...state,value:action.payload}},
-        modifyUserData:(state,action)=>{
-            return {...state,value:action.payload}
+        changeUserAuth:(state,action) => {return {...current(state),value:action.payload}},
+        setUserData:(state,action)=>{
+            return { ...current(state),userData:action.payload}
+        },
+        AddUserAddress:(state,action)=>{
+            return {...current(state)}
         }
     }
 })
@@ -47,6 +39,5 @@ export const PrevCartDataSlice=createSlice({
 
 })
 
-export const {changeProductType}=ProductTypeSlice.actions;
-export const {changeUserAuth,modifyUserData}=UserAuthSlice.actions;
+export const {changeUserAuth,setUserData}=UserAuthSlice.actions;
 export const {updateCartData,updatePrice,removeCartData}=PrevCartDataSlice.actions;
