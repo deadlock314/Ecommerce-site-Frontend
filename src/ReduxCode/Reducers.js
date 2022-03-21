@@ -1,4 +1,5 @@
 import { createSlice ,current } from '@reduxjs/toolkit';
+import { getStorage } from '../HelperFun/browserStorageFuns';
 
 export const UserAuthSlice=createSlice({
     name:'authContext',
@@ -19,7 +20,7 @@ export const UserAuthSlice=createSlice({
 
 export const PrevCartDataSlice=createSlice({
     name:'cartData',
-    initialState:{
+    initialState: getStorage("previousCartData") ||{
         prevCartData:[],
         totalPrice:'0',
         countObj:{}

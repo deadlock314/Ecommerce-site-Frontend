@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { setStorage ,getStorage} from '../HelperFun/browserStorageFuns';
 import {CartDataReducer ,UserAuthReducer} from './Actions';
 
 
@@ -6,7 +7,10 @@ import {CartDataReducer ,UserAuthReducer} from './Actions';
     reducer:{
       userAuth:UserAuthReducer,
       cartData:CartDataReducer   
-    }
+    },
+    preloadedState: getStorage("previousStoreData")||{}
 });
+    
+    store.subscribe(()=>setStorage("previousStoreData",store.getState()))
 
 export default store

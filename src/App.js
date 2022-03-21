@@ -11,8 +11,12 @@ import UserProfile from "./UserProfileComponent/UserProfile";
 import Footer from './unitComponent/Footer';
 import './Styles/globalStyles.css';
 import AuthOtp from './authComponent/AuthOtp';
+import { setStorage } from './HelperFun/browserStorageFuns';
 
-function App() {
+const App=()=> {
+
+  setStorage("productType","laptops");
+
   
   return (
 
