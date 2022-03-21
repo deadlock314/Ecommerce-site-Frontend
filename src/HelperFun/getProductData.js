@@ -1,18 +1,10 @@
 import axios from 'axios';
 
-
-
-const getProductInfoData=async(prop,productType)=>{
-  console.log(productType)
-
-  
+const getProductInfoData=async(productType,id)=>{
   try{
-      const infoObj=await axios.get(`https://ecommerce-app-api-1.herokuapp.com/singleproduct/${productType}/${prop.ProductId}`,{withCredentials: true
+      const exdesObj=await axios.get(`https://ecommerce-app-api-1.herokuapp.com/singleproductexdes/${productType}/${id}`,{withCredentials: true
     });
-      const exdesObj=await axios.get(`https://ecommerce-app-api-1.herokuapp.com/singleproductexdes/${productType}/${prop.ProductId}`,{withCredentials: true
-    });
-      
-      return {...infoObj.data,...exdesObj.data}
+      return {...exdesObj.data.extendedDes}
   }
   catch{
     return({})
