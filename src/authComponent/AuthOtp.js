@@ -31,7 +31,7 @@ function AuthOtp() {
     // const ResendOTPFun=(e)=>{
 
     // }
-
+    
     const VerifySignup=async(e)=>{
     e.preventDefault();
     try{

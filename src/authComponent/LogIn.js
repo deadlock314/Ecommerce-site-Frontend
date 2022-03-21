@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/FormStyles.css';
 import Spinner from '../unitComponent/Spinner';
-import {changeUserAuth,modifyUserData} from '../ReduxCode/Reducers';
+import {changeUserAuth,setUserData} from '../ReduxCode/Reducers';
 
  function LogIn() {
 
@@ -17,9 +17,7 @@ import {changeUserAuth,modifyUserData} from '../ReduxCode/Reducers';
     let [user ,setUser] = useState({email:'' ,password:''});
         const changeHandler =e=>{
             const {name , value}=e.target;
-            setUser((user) =>({
-                ...user,  [name]: value 
-            }));
+            setUser((user) =>({ ...user,  [name]: value   }));
         };
         
         const loginResHandler=(res)=>{
@@ -32,7 +30,7 @@ import {changeUserAuth,modifyUserData} from '../ReduxCode/Reducers';
                 }).then((userdata)=>{
                         if(userdata.data){
                             dispatch(changeUserAuth(true))
-                            dispatch(modifyUserData(userdata.data)) 
+                            dispatch(setUserData(userdata.data)) 
                             redirect(`/user/${userdata.data.userAccData._Id}`);
                        }
                     })

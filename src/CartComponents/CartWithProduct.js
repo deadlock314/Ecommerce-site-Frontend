@@ -10,7 +10,6 @@ import { priceAdder } from '../HelperFun/priceAdder';
 const CartWithProduct = () => {
 
   const cartData = useSelector((state) => state.cartData);
-
   const dispatch = useDispatch()
 
   const cartState = cartData.prevCartData || [];
@@ -19,7 +18,6 @@ const CartWithProduct = () => {
     e.preventDefault();
 
     const id = e.target.name;
-
     dispatch(removeCartData(id));
     dispatch(updatePrice({
       countObj: { id, count: 1 },
