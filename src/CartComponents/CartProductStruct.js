@@ -1,15 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { getStorage } from '../HelperFun/browserStorageFuns';
 import '../Styles/CartStyles/CartPS.css';
 
 
 const CartProductStruct=(prop)=> {
     
     const redirect=useNavigate();
-    const ProductType=useSelector(s=>s.productType.value);
 
-    const clickProductStructHandler=(e)=> {console.log(e.target.name); redirect(`/ProductInfo/${ProductType}/${prop.props.productId}`)}
+    const clickProductStructHandler=e=>  redirect(`/ProductInfo/${getStorage("productType")}/${prop.props.productId}`)
 
     return ( 
        
