@@ -1,9 +1,9 @@
 import React from 'react';
-import CartButtons from '../unitComponent/CartButtons';
 import Ratings from './Ratings';
 import { useSelector } from 'react-redux';
 import Spinner from '../unitComponent/Spinner';
 import ProductExtendedDes from './ProductExtendedDes';
+import CartButtons from './CartButtons';
 
 const PropsInfoStruct = ({ product  }) => {
 
