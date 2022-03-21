@@ -1,36 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 import ProductInfoStruct from './ProductInfoStruct';
-import {getProductInfoData} from '../HelperFun/getProductData';
 import '../Styles/ProductInfoStyles/productInfoStyles.css';
 import Spinner from '../unitComponent/Spinner';
-import { useSelector } from 'react-redux';
+import { getStorage } from '../HelperFun/browserStorageFuns';
+import { getProductInfoData } from '../HelperFun/getProductData';
+import ProductExtendedDes from './ProductExtendedDes';
 
-const ProductInfo=()=> {
-    
-const param=useParams();
-const ProductType= param.ProductType|| useSelector((state)=>state.productType.value);
+const ProductInfo = () => {
 
-const [ productInfo,setProductInfo]=useState();
-const [loading ,setLoading]=useState(true);
+   const param = useParams();
 
-useEffect(()=>
-{
-   const FetchData=async()=>{
-   const res= await getProductInfoData(param,ProductType);
-   setProductInfo(res)
-   setLoading(false)
-}
-   FetchData();
+   const { state } = useLocation();
 
-},[]);
+   const ProductType = param.ProductType || getStorage("productType");
 
+   const [loading, setLoading] = useState(true);
 
-    return ( 
-    <>
-    {loading ?<Spinner/> :(<ProductInfoStruct product={{productInfo,ProductType}} />)}
-   
-   </>
+   const [exdes, setExdes] = useState({});
+
+   useEffect(() => {
+      getProductInfoData(ProductType, state.productId).then((res) => {
+         console.log(res);
+         setExdes(res)
+         setLoading(false)
+      }
+
+      )
+   }, []);
+
+   return (
+
+            <ProductInfoStruct product={{ state, ProductType,exdes ,loading }} />
+
    );
 }
 

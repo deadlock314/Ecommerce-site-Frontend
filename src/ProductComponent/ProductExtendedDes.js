@@ -1,8 +1,9 @@
 import React from 'react';
 import '../Styles/ProductInfoStyles/ExdesStyles.css';
 
-function ExtendedDes(props) {
-  
+const ProductExtendedDes=(props)=> {
+console.log(props) 
+
   if(props.exdes){
     let ExDes=[];
     ExDes=props.exdes;
@@ -13,7 +14,7 @@ function ExtendedDes(props) {
      return ( 
          <>
           <p id='productInfo-maintitle'>Product Specifications</p>
-       {
+        {
             keys.map((key)=>{
              return(
                  <div key={Math.random()}>
@@ -45,12 +46,9 @@ function ExtendedDes(props) {
          </>
       );
   }
-  else{
-    return(
-    <>
-    </>)
-  }
+  else  return <> </>
+  
    
 }
 
-export default ExtendedDes;
+export default ProductExtendedDes;
