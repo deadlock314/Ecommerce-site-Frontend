@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter,Routes ,Route} from 'react-router-dom';
-import NavBar from './unitComponent/NavBar';
-import LogIn from './authComponent/LogIn';
-import SignUp from './authComponent/SignUp'
-import ProductInfo from './ProductComponent/ProductInfo';
-import Products from './ProductComponent/Products';
-import Cart from './CartComponents/Cart';
-import BuyingPage from './BuyingPageComponent/BuyingPage';
-import UserProfile from "./UserProfileComponent/UserProfile";
-import Footer from './unitComponent/Footer';
+import NavBar from './Components/unitComponent/NavBar';
+import LogIn from './Components/authComponent/LogIn';
+import SignUp from './Components/authComponent/SignUp'
+import ProductInfo from './Components/ProductComponent/ProductInfo';
+import Products from './Components/ProductComponent/Products';
+import Cart from './Components/CartComponents/Cart';
+import UserProfile from "./Components/ProfileComponent/UserProfile";
+import Footer from './Components/unitComponent/Footer';
 import './Styles/globalStyles.css';
-import AuthOtp from './authComponent/AuthOtp';
+import AuthOtp from './Components/authComponent/AuthOtp';
 import { setStorage } from './HelperFun/browserStorageFuns';
+import BuyingPage from './Components/BuyingPageComponent/BuyingPage';
 
 const App=()=> {
 

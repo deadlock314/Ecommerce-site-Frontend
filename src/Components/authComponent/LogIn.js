@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React ,{ useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import '../Styles/FormStyles.css';
+import '../../Styles/FormStyles.css';
 import Spinner from '../unitComponent/Spinner';
-import {changeUserAuth,setUserData} from '../ReduxCode/Reducers';
+import {changeUserAuth,setUserData} from '../../ReduxCode/Reducers';
 
- function LogIn() {
+ const LogIn=()=> {
 
     const redirect = useNavigate();
     const [loading,setLoading]=useState(false);

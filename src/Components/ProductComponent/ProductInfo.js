@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router';
 import ProductInfoStruct from './ProductInfoStruct';
-import '../Styles/ProductInfoStyles/productInfoStyles.css';
-import Spinner from '../unitComponent/Spinner';
-import { getStorage } from '../HelperFun/browserStorageFuns';
-import { getProductInfoData } from '../HelperFun/getProductData';
-import ProductExtendedDes from './ProductExtendedDes';
+import '../../Styles/ProductInfoStyles/productInfoStyles.css';
+import { getStorage } from '../../HelperFun/browserStorageFuns';
+import { getProductInfoData } from '../../HelperFun/getProductData';
 
 const ProductInfo = () => {
 

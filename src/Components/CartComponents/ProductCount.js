@@ -1,13 +1,14 @@
 import React from 'react';
-import '../Styles/CartStyles/CartButtonStyles.css';
-import {priceAdder} from '../HelperFun/priceAdder';
+import '../../Styles/CartStyles/CartButtonStyles.css';
+import {priceAdder} from '../../HelperFun/priceAdder';
 import { useDispatch, useSelector } from 'react-redux';
-import { updatePrice } from '../ReduxCode/Reducers';
+import { updatePrice } from '../../ReduxCode/Reducers';
 
 const ProductCounter=({props})=>{
 
     let count= useSelector(state=> state.cartData.countObj[props._id]) || 1;
-    const prevPrice=useSelector(state=>state.cartData.totalPrice)
+    const prevPrice=useSelector(state=>state.cartData.totalPrice);
+    
     const dispatch=useDispatch(); 
 
     const incHandler=()=>dispatch(updatePrice({ 

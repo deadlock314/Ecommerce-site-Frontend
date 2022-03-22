@@ -1,15 +1,14 @@
 import React,{ useEffect,useState} from 'react';
 import ProductStruct from './ProductStruct';
-import '../Styles/ProductInfoStyles/productStyles.css';
+import '../../Styles/ProductInfoStyles/productStyles.css';
 import { useParams } from 'react-router';
-import {getProductListData}  from '../HelperFun/getProductData';
+import {getProductListData}  from '../../HelperFun/getProductData';
 import Spinner from '../unitComponent/Spinner';
-import {  getStorage, setStorage } from '../HelperFun/browserStorageFuns';
+import {  getStorage, setStorage } from '../../HelperFun/browserStorageFuns';
 
 const Products=()=> {
 
     const params=useParams();
-    
     const ProductType= params.productName|| getStorage("productType");
 
     const [productList,setProductList]=useState([{}]);
@@ -21,8 +20,8 @@ const Products=()=> {
             if(getStorage("homeProducts") && getStorage("productType")==ProductType)
                 setProductList(JSON.parse(getStorage("homeProducts")))
             else{
-              const res= await getProductListData(`https://ecommerce-app-api-1.herokuapp.com/${ProductType}`)
-               setProductList(res[0][ProductType]);
+             const  res= await getProductListData(`https://ecommerce-app-api-1.herokuapp.com/${ProductType}`)
+               setProductList(res[0][ProductType])
                setStorage("homeProducts",JSON.stringify(res[0][ProductType]));
             }
         setLoading(false);

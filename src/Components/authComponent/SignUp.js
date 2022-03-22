@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import '../Styles/FormStyles.css';
+import '../../Styles/FormStyles.css';
 
 function SignUp() {
     const redirect = useNavigate();

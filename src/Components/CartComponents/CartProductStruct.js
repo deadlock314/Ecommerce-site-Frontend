@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { getStorage } from '../HelperFun/browserStorageFuns';
-import '../Styles/CartStyles/CartPS.css';
+import { getStorage } from '../../HelperFun/browserStorageFuns';
+import '../../Styles/CartStyles/CartPS.css';
 
 
 const CartProductStruct=(prop)=> {

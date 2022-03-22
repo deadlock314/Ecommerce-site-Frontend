@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/ProductInfoStyles/ExdesStyles.css';
+import '../../Styles/ProductInfoStyles/ExdesStyles.css';
 
 const ProductExtendedDes=(props)=> {
 console.log(props) 

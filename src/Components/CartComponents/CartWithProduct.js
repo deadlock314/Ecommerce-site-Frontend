@@ -1,18 +1,18 @@
 import React from 'react';
 import CartProductStruct from './CartProductStruct';
 import ProductCounter from './ProductCount';
-import '../Styles/CartStyles/CartPS.css';
+import '../../Styles/CartStyles/CartPS.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { updatePrice, removeCartData } from '../ReduxCode/Reducers';
+import { updatePrice, removeCartData } from '../../ReduxCode/Reducers';
 import PriceCalc from './PriceCalc';
-import { priceAdder } from '../HelperFun/priceAdder';
+import { priceAdder } from '../../HelperFun/priceAdder';
 
 const CartWithProduct = () => {
 
   const cartData = useSelector((state) => state.cartData);
-  const dispatch = useDispatch()
+  const cartState=cartData.prevCartData|| [];
 
-  const cartState = cartData.prevCartData || [];
+  const dispatch = useDispatch();
 
   const CartDelClickHandler = (e) => {
     e.preventDefault();

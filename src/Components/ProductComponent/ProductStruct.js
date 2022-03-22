@@ -1,7 +1,8 @@
 import React from 'react';
-import '../Styles/ProductInfoStyles/productStyles.css';
+import '../../Styles/ProductInfoStyles/productStyles.css';
 import { useNavigate } from 'react-router';
-import { getStorage } from '../HelperFun/browserStorageFuns';
+import {  getStorage } from '../../HelperFun/browserStorageFuns';
+
 
 function ProductStruct({ props }) {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import '../Styles/CartStyles/EmptyCartStyles.css';
+import '../../Styles/CartStyles/EmptyCartStyles.css';
 
 
 function EmptyCart() {
